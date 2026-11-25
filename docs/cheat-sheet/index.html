@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
+  <title>SDLC Cheat Sheet: One-Page Quick Reference for Developers</title>
+  <meta name="description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing levels, deployment strategies, and artifacts.">
+  <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SDLC Cheat Sheet: One-Page Quick Reference for Developers">
+  <meta property="og:description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing levels, deployment strategies, and artifacts.">
+  <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SDLC Cheat Sheet: One-Page Quick Reference for Developers">
+  <meta name="twitter:description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing levels, deployment strategies, and artifacts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Cheat Sheet: One-Page Quick Reference for Developers","headline":"SDLC Cheat Sheet: One-Page Quick Reference for Developers","description":"Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing levels, deployment strategies, and artifacts.","url":"https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../">
+        <span>awesome-sdlc</span>
+        <span class="brand-tag">MIT open source</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../cheat-sheet/" aria-current="page">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC cheat sheet</span></nav>
+        <h1>SDLC developer cheat sheet</h1>
+        <p class="lead">Concise one-page reference of phases, models, testing layers, and deployment strategies. Press Ctrl+P or Cmd+P to print cleanly.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <div class="sheet-box">
+            <h3>7 phases at a glance</h3>
+            <ol style="margin: 0; padding-left: var(--space-lg); color: var(--color-ink-2); font-size: var(--text-sm);">
+              <li>Planning: scope, budget, timeline, risks.</li>
+              <li>Requirements: PRD, SRS, acceptance criteria.</li>
+              <li>Design: architecture, schema, API contracts.</li>
+              <li>Implementation: code, PR reviews, CI checks.</li>
+              <li>Testing: unit, integration, E2E, security, load.</li>
+              <li>Deployment: canary, blue-green, migrations.</li>
+              <li>Maintenance: monitoring, patches, post-mortems.</li>
+            </ol>
+          </div>
+
+          <div class="sheet-box">
+            <h3>Model selection shortcuts</h3>
+            <ul style="margin: 0; padding-left: var(--space-lg); color: var(--color-ink-2); font-size: var(--text-sm);">
+              <li>Requirements change weekly: Agile (Scrum / Kanban).</li>
+              <li>Fixed scope and contract: Waterfall.</li>
+              <li>Safety-critical or audited: V-Model.</li>
+              <li>High technical R&amp;D risk: Spiral.</li>
+              <li>Clear core, phased features: Iterative.</li>
+            </ul>
+          </div>
+
+          <div class="sheet-box">
+            <h3>Testing pyramid</h3>
+            <ul style="margin: 0; padding-left: var(--space-lg); color: var(--color-ink-2); font-size: var(--text-sm);">
+              <li>Unit tests: fast, isolated functions (largest share).</li>
+              <li>Integration tests: DB queries, queues, API contracts.</li>
+              <li>End-to-end tests: critical browser or mobile journeys.</li>
+              <li>Non-functional: load, chaos, accessibility, SAST/DAST.</li>
+            </ul>
+          </div>
+
+          <div class="sheet-box">
+            <h3>Deployment strategies</h3>
+            <ul style="margin: 0; padding-left: var(--space-lg); color: var(--color-ink-2); font-size: var(--text-sm);">
+              <li>Rolling: replace instances in batches; low infra cost.</li>
+              <li>Blue-green: run two environments; instant traffic switch.</li>
+              <li>Canary: send 5% to 10% traffic to new version first.</li>
+              <li>Feature flags: decouple code deploy from user launch.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="btn-row" style="margin-top: var(--space-xl);">
+          <button type="button" class="btn btn--primary" onclick="window.print()">Print cheat sheet</button>
+          <a class="btn" href="../checklist/">Open checklist tool</a>
+          <a class="btn" href="../templates/">Open template builder</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="../">awesome-sdlc</a>
+          <p class="footer-note">Open-source SDLC guides, templates, diagrams, and browser tools by Developer Assistants.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Guides</div>
+          <ul class="footer-links">
+            <li><a href="../meaning/">Meaning</a></li>
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../agile/">Agile</a></li>
+            <li><a href="../waterfall/">Waterfall</a></li>
+            <li><a href="../examples/">Examples</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Tools</div>
+          <ul class="footer-links">
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../interview-questions/">Quiz &amp; Q&amp;A</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>MIT License</span>
+        <span><a href="../sitemap.xml">Sitemap</a> / <a href="../llms.txt">llms.txt</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/tools.js" defer></script>
+</body>
+</html>

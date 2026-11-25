@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
+  <title>SDLC Examples: 3 Real-World Software Projects Walked Through</title>
+  <meta name="description" content="Concrete Software Development Life Cycle examples: a SaaS Stripe billing feature, a public REST API, and an offline-first mobile app.">
+  <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/examples/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SDLC Examples: 3 Real-World Software Projects Walked Through">
+  <meta property="og:description" content="Concrete Software Development Life Cycle examples: a SaaS Stripe billing feature, a public REST API, and an offline-first mobile app.">
+  <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/examples/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SDLC Examples: 3 Real-World Software Projects Walked Through">
+  <meta name="twitter:description" content="Concrete Software Development Life Cycle examples: a SaaS Stripe billing feature, a public REST API, and an offline-first mobile app.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Examples: 3 Real-World Software Projects Walked Through","headline":"SDLC Examples: 3 Real-World Software Projects Walked Through","description":"Concrete Software Development Life Cycle examples: a SaaS Stripe billing feature, a public REST API, and an offline-first mobile app.","url":"https://developer-assistants.github.io/awesome-sdlc/examples/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../">
+        <span>awesome-sdlc</span>
+        <span class="brand-tag">MIT open source</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC examples</span></nav>
+        <h1>Real-world SDLC examples</h1>
+        <p class="lead">How the seven SDLC phases look in practice across three everyday software engineering projects.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <h2>Example 1: Adding subscription billing to a B2B SaaS app (Agile)</h2>
+        <p>A six-person SaaS team wants to move from manual PDF invoices to automated card billing.</p>
+        <ol>
+          <li>Planning: Target a four-week launch for monthly and annual plans; defer enterprise wire transfers to Q3.</li>
+          <li>Requirements: Users upgrade or downgrade plans self-serve; failed charges retry three times over seven days; webhook events must be idempotent.</li>
+          <li>Design: Store subscription state in a local PostgreSQL table synced from Stripe webhooks; never store raw card numbers.</li>
+          <li>Implementation: Build checkout session endpoints, webhook signature verification, and billing settings UI in two two-week sprints.</li>
+          <li>Testing: Replay Stripe CLI test events for payment succeeded, failed, and chargeback scenarios in staging.</li>
+          <li>Deployment: Enable the billing tab for 10% of workspaces via feature flag, verify webhook logs, then open to 100%.</li>
+          <li>Maintenance: Alert on webhook 5xx errors and reconcile subscription counts nightly.</li>
+        </ol>
+
+        <h2>Example 2: Shipping a public rate-limited REST API (Iterative)</h2>
+        <p>A logistics company exposes shipment tracking endpoints to external partners.</p>
+        <ol>
+          <li>Planning: Define a 99.95% uptime SLO and assign a dedicated API platform squad.</li>
+          <li>Requirements: OAuth 2.0 client credentials, 120 requests per minute per key, OpenAPI 3.1 docs, and JSON error codes following RFC 9457.</li>
+          <li>Design: Put an API gateway in front of a read-replica database with Redis token-bucket rate limiting.</li>
+          <li>Implementation: Generate server stubs from the OpenAPI contract and write contract tests before wiring resolvers.</li>
+          <li>Testing: Run k6 load tests at 3x expected peak traffic and verify 429 Retry-After headers.</li>
+          <li>Deployment: Release v1 behind a versioned path (/v1/shipments) with canary traffic routing.</li>
+          <li>Maintenance: Publish deprecation headers six months before retiring any field.</li>
+        </ol>
+
+        <h2>Example 3: Firmware update for a medical infusion pump (V-Model)</h2>
+        <p>An embedded systems team updates dosage-calculation firmware under FDA Class II oversight.</p>
+        <ol>
+          <li>Planning: Freeze scope, assign safety officer, and schedule formal external audit dates.</li>
+          <li>Requirements: Baseline every dosage boundary and alarm trigger in a traceable SRS document.</li>
+          <li>Design: Map hardware interrupts, memory bounds, and fail-safe shutdown states.</li>
+          <li>Implementation: Write MISRA-C compliant code with mandatory dual-engineer code reviews.</li>
+          <li>Testing: Run unit, hardware-in-the-loop integration, system, and clinical acceptance tests linked 1-to-1 to the SRS.</li>
+          <li>Deployment: Sign firmware binaries with hardware security modules and distribute via controlled hospital updates.</li>
+          <li>Maintenance: Track field telemetry and maintain long-term audit archives.</li>
+        </ol>
+
+        <div class="btn-row">
+          <a class="btn btn--primary" href="../checklist/">Build a checklist for your project</a>
+          <a class="btn" href="../templates/">Generate project templates</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="../">awesome-sdlc</a>
+          <p class="footer-note">Open-source SDLC guides, templates, diagrams, and browser tools by Developer Assistants.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Guides</div>
+          <ul class="footer-links">
+            <li><a href="../meaning/">Meaning</a></li>
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../agile/">Agile</a></li>
+            <li><a href="../waterfall/">Waterfall</a></li>
+            <li><a href="../examples/">Examples</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Tools</div>
+          <ul class="footer-links">
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../interview-questions/">Quiz &amp; Q&amp;A</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>MIT License</span>
+        <span><a href="../sitemap.xml">Sitemap</a> / <a href="../llms.txt">llms.txt</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/tools.js" defer></script>
+</body>
+</html>

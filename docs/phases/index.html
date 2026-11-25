@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
+  <title>7 SDLC Phases Explained with Real Examples and Deliverables</title>
+  <meta name="description" content="Complete breakdown of all 7 phases of the Software Development Life Cycle (Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance).">
+  <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/phases/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="7 SDLC Phases Explained with Real Examples and Deliverables">
+  <meta property="og:description" content="Complete breakdown of all 7 phases of the Software Development Life Cycle (Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance).">
+  <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/phases/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="7 SDLC Phases Explained with Real Examples and Deliverables">
+  <meta name="twitter:description" content="Complete breakdown of all 7 phases of the Software Development Life Cycle (Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"7 SDLC Phases Explained with Real Examples and Deliverables","headline":"7 SDLC Phases Explained with Real Examples and Deliverables","description":"Complete breakdown of all 7 phases of the Software Development Life Cycle (Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance).","url":"https://developer-assistants.github.io/awesome-sdlc/phases/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../">
+        <span>awesome-sdlc</span>
+        <span class="brand-tag">MIT open source</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+            <li><a href="../phases/" aria-current="page">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC phases</span></nav>
+        <h1>The 7 phases of the software development life cycle</h1>
+        <p class="lead">Every phase takes a concrete input, produces a verifiable artifact, and reduces a specific class of delivery risk.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Phase</th><th>Goal</th><th>Typical artifacts</th><th>Exit gate</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1. Planning</td><td>Confirm feasibility, scope, budget, and schedule.</td><td>Project charter, risk register</td><td>Stakeholder go/no-go approval</td></tr>
+              <tr><td>2. Requirements</td><td>Turn goals into testable functional and non-functional specs.</td><td>PRD, SRS, user stories</td><td>Signed-off acceptance criteria</td></tr>
+              <tr><td>3. System design</td><td>Define architecture, database schema, APIs, and security.</td><td>Architecture doc, ERD, OpenAPI spec</td><td>Design review sign-off</td></tr>
+              <tr><td>4. Implementation</td><td>Write clean, reviewed code and automated unit tests.</td><td>Commits, pull requests, CI builds</td><td>Merged PRs with green CI</td></tr>
+              <tr><td>5. Testing</td><td>Verify correctness, performance, and security before release.</td><td>Test plan, QA report, load test</td><td>Zero open Sev-1/Sev-2 bugs</td></tr>
+              <tr><td>6. Deployment</td><td>Ship to production with minimal downtime and rollback safety.</td><td>Release notes, runbook, telemetry</td><td>Production health checks pass</td></tr>
+              <tr><td>7. Maintenance</td><td>Monitor, patch, and evolve the live system.</td><td>Post-mortems, patches, backlog</td><td>Continuous SLO compliance</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>1. Planning</h2>
+        <p>The team agrees on why the project exists, who pays for it, and what is out of scope. Example: before building a self-serve billing portal, the engineering manager estimates six weeks for two backend engineers and one frontend engineer, confirms Stripe fees, and explicitly defers multi-currency invoicing to phase two.</p>
+
+        <h2>2. Requirements analysis</h2>
+        <p>Product and engineering translate business goals into concrete specifications. Functional requirements describe what the system must do (for example, "users can download PDF invoices for the past 24 months"). Non-functional requirements define constraints such as p95 latency under 250ms, 99.9% uptime, and PCI compliance boundaries.</p>
+
+        <h2>3. System design</h2>
+        <p>Engineers choose data stores, service boundaries, authentication flows, and failure handling. Writing a short Architecture Design Document (ADD) before coding surfaces expensive mistakes such as missing database indexes, unversioned API payloads, or single points of failure. Grab a starter in our <a href="../templates/">Template Builder</a>.</p>
+
+        <h2>4. Implementation</h2>
+        <p>Developers write code against small, reviewable pull requests. Modern teams pair implementation with continuous integration: every push runs linters, type checks, static security scans, and unit tests automatically.</p>
+
+        <h2>5. Testing</h2>
+        <p>QA and developers verify the build across multiple layers: unit tests for logic, integration tests for database and API contracts, end-to-end tests for critical user flows, and load tests for peak traffic. In regulated industries, users also complete formal User Acceptance Testing (UAT) in staging.</p>
+
+        <h2>6. Deployment</h2>
+        <p>Code moves to production through automated pipelines. Teams reduce blast radius using blue-green deployments, canary rollouts (sending 5% of traffic to the new version first), and backward-compatible database migrations so rollbacks stay safe.</p>
+
+        <h2>7. Maintenance</h2>
+        <p>Most software spends 70% or more of its life in maintenance. Maintenance falls into four categories: corrective (fixing bugs), adaptive (updating for new OS or API versions), perfective (improving speed or usability), and preventive (refactoring and dependency upgrades).</p>
+
+        <div class="btn-row">
+          <a class="btn btn--primary" href="../checklist/">Track these 7 phases in the checklist tool</a>
+          <a class="btn" href="../diagram/">Generate a phase diagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="../">awesome-sdlc</a>
+          <p class="footer-note">Open-source SDLC guides, templates, diagrams, and browser tools by Developer Assistants.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Guides</div>
+          <ul class="footer-links">
+            <li><a href="../meaning/">Meaning</a></li>
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../agile/">Agile</a></li>
+            <li><a href="../waterfall/">Waterfall</a></li>
+            <li><a href="../examples/">Examples</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Tools</div>
+          <ul class="footer-links">
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../interview-questions/">Quiz &amp; Q&amp;A</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>MIT License</span>
+        <span><a href="../sitemap.xml">Sitemap</a> / <a href="../llms.txt">llms.txt</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/tools.js" defer></script>
+</body>
+</html>

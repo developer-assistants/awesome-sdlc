@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
+  <title>SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative</title>
+  <meta name="description" content="Compare the five main SDLC models and use the interactive SDLC Model Selector to pick the right methodology for your project.">
+  <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/models/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative">
+  <meta property="og:description" content="Compare the five main SDLC models and use the interactive SDLC Model Selector to pick the right methodology for your project.">
+  <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/models/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative">
+  <meta name="twitter:description" content="Compare the five main SDLC models and use the interactive SDLC Model Selector to pick the right methodology for your project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative","headline":"SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative","description":"Compare the five main SDLC models and use the interactive SDLC Model Selector to pick the right methodology for your project.","url":"https://developer-assistants.github.io/awesome-sdlc/models/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../">
+        <span>awesome-sdlc</span>
+        <span class="brand-tag">MIT open source</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/" aria-current="page">Models</a></li>
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC models</span></nav>
+        <h1>SDLC models and methodology selector</h1>
+        <p class="lead">Different projects face different uncertainty and compliance rules. Choose your project parameters below to see which SDLC model fits best.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="tool-panel" data-model-selector>
+          <h2>Interactive SDLC model selector</h2>
+          <p class="footer-note" style="margin-bottom: var(--space-lg);">Adjust the five project parameters. Scores update immediately in your browser.</p>
+          <form>
+            <div class="field-grid">
+              <div class="field">
+                <label for="ms-stability">Requirements stability</label>
+                <select id="ms-stability" name="stability">
+                  <option value="changing">Frequently changing (discovery ongoing)</option>
+                  <option value="mixed">Core is fixed, details evolve</option>
+                  <option value="fixed">Fixed and signed off up front</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ms-cadence">Release cadence</label>
+                <select id="ms-cadence" name="cadence">
+                  <option value="continuous">Weekly or continuous releases</option>
+                  <option value="milestone">Planned quarterly milestones</option>
+                  <option value="single">Single major launch</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ms-compliance">Compliance and audit rigor</label>
+                <select id="ms-compliance" name="compliance">
+                  <option value="low">Low (standard commercial app)</option>
+                  <option value="medium">Medium (SOC 2 / GDPR)</option>
+                  <option value="high">High (medical, aerospace, banking)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ms-risk">Technical risk and novelty</label>
+                <select id="ms-risk" name="risk">
+                  <option value="low">Low (proven stack and patterns)</option>
+                  <option value="medium">Medium (some new integrations)</option>
+                  <option value="high">High (unproven R&amp;D or scale)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ms-team">Team size</label>
+                <select id="ms-team" name="team">
+                  <option value="small">Small (2 to 8 engineers)</option>
+                  <option value="medium">Medium (9 to 30 engineers)</option>
+                  <option value="large">Large (30+ engineers, multiple vendors)</option>
+                </select>
+              </div>
+            </div>
+          </form>
+          <div data-selector-result aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2>Side-by-side comparison of SDLC models</h2>
+        <div class="table-wrap" style="margin-top: var(--space-lg);">
+          <table class="data-table">
+            <thead>
+              <tr><th>Model</th><th>Best for</th><th>Change tolerance</th><th>Testing timing</th><th>Main risk</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><a href="../agile/">Agile (Scrum / Kanban)</a></td><td>SaaS, consumer apps, startups</td><td>High</td><td>Continuous inside every sprint</td><td>Scope drift without strong backlog grooming</td></tr>
+              <tr><td><a href="../waterfall/">Waterfall</a></td><td>Fixed-bid contracts, stable specs</td><td>Low</td><td>After implementation finishes</td><td>Late discovery of requirement gaps</td></tr>
+              <tr><td>V-Model</td><td>Medical, automotive, regulated finance</td><td>Low</td><td>Test design starts alongside specs</td><td>Heavy documentation overhead</td></tr>
+              <tr><td>Spiral</td><td>Large, high-risk, novel R&amp;D systems</td><td>Medium to high</td><td>End of every risk cycle</td><td>Costly risk analysis expertise</td></tr>
+              <tr><td>Iterative</td><td>Platform migrations, phased rollouts</td><td>Medium</td><td>After each incremental build</td><td>Early architecture may need rework</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="../">awesome-sdlc</a>
+          <p class="footer-note">Open-source SDLC guides, templates, diagrams, and browser tools by Developer Assistants.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Guides</div>
+          <ul class="footer-links">
+            <li><a href="../meaning/">Meaning</a></li>
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../agile/">Agile</a></li>
+            <li><a href="../waterfall/">Waterfall</a></li>
+            <li><a href="../examples/">Examples</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Tools</div>
+          <ul class="footer-links">
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../interview-questions/">Quiz &amp; Q&amp;A</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>MIT License</span>
+        <span><a href="../sitemap.xml">Sitemap</a> / <a href="../llms.txt">llms.txt</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/tools.js" defer></script>
+</body>
+</html>

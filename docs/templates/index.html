@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
+  <title>SDLC Templates: Free Markdown Builder for PRD, SRS, Design & Test Plans</title>
+  <meta name="description" content="Free interactive SDLC Template Builder. Fill your project details and copy or download Markdown templates for PRD, SRS, Architecture Doc, Test Plan, Runbook, and Post-Mortem.">
+  <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/templates/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SDLC Templates: Free Markdown Builder for PRD, SRS, Design & Test Plans">
+  <meta property="og:description" content="Free interactive SDLC Template Builder. Fill your project details and copy or download Markdown templates for PRD, SRS, Architecture Doc, Test Plan, Runbook, and Post-Mortem.">
+  <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/templates/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SDLC Templates: Free Markdown Builder for PRD, SRS, Design & Test Plans">
+  <meta name="twitter:description" content="Free interactive SDLC Template Builder. Fill your project details and copy or download Markdown templates for PRD, SRS, Architecture Doc, Test Plan, Runbook, and Post-Mortem.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Templates: Free Markdown Builder for PRD, SRS, Design & Test Plans","headline":"SDLC Templates: Free Markdown Builder for PRD, SRS, Design & Test Plans","description":"Free interactive SDLC Template Builder. Fill your project details and copy or download Markdown templates for PRD, SRS, Architecture Doc, Test Plan, Runbook, and Post-Mortem.","url":"https://developer-assistants.github.io/awesome-sdlc/templates/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="../">
+        <span>awesome-sdlc</span>
+        <span class="brand-tag">MIT open source</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/" aria-current="page">Templates</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC templates</span></nav>
+        <h1>SDLC templates and Markdown builder</h1>
+        <p class="lead">Customize standard engineering documents in your browser and download ready-to-commit Markdown files.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="tool-panel" data-template-builder>
+          <div class="field-grid">
+            <div class="field">
+              <label for="tpl-type">Template type</label>
+              <select id="tpl-type" data-tpl-type>
+                <option value="prd">Product Requirements Document (PRD)</option>
+                <option value="srs">Software Requirements Specification (SRS)</option>
+                <option value="design">Architecture Design Document (ADD)</option>
+                <option value="testplan">QA Test Plan</option>
+                <option value="release">Deployment Runbook</option>
+                <option value="postmortem">Incident Post-Mortem</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="tpl-name">Project name</label>
+              <input id="tpl-name" type="text" data-tpl-name value="Payments API v2">
+            </div>
+            <div class="field">
+              <label for="tpl-owner">Owner or team</label>
+              <input id="tpl-owner" type="text" data-tpl-owner value="Core Platform Team">
+            </div>
+            <div class="field">
+              <label for="tpl-date">Target date</label>
+              <input id="tpl-date" type="date" data-tpl-date>
+            </div>
+            <div class="field">
+              <label for="tpl-stack">Tech stack</label>
+              <input id="tpl-stack" type="text" data-tpl-stack value="TypeScript, PostgreSQL, Redis, Docker">
+            </div>
+            <div class="field">
+              <label for="tpl-scope">Summary or scope</label>
+              <input id="tpl-scope" type="text" data-tpl-scope value="Process recurring subscriptions with idempotent webhook handling.">
+            </div>
+          </div>
+
+          <pre class="code-block" data-tpl-output></pre>
+
+          <div class="btn-row" style="margin-top: var(--space-md);">
+            <button type="button" class="btn btn--primary" data-tpl-copy>Copy Markdown</button>
+            <button type="button" class="btn" data-tpl-download>Download .md file</button>
+            <span class="status-note" data-tpl-status aria-live="polite"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2>Raw Markdown templates on GitHub</h2>
+        <ul class="ruled-list" style="margin-top: var(--space-lg);">
+          <li class="ruled-row"><a href="https://github.com/developer-assistants/awesome-sdlc/blob/main/templates/prd-template.md">prd-template.md</a><span class="ruled-desc">Product goals, non-goals, user stories, and release criteria.</span><span class="ruled-meta">Phase 1-2</span></li>
+          <li class="ruled-row"><a href="https://github.com/developer-assistants/awesome-sdlc/blob/main/templates/srs-template.md">srs-template.md</a><span class="ruled-desc">Functional and non-functional requirements with IDs.</span><span class="ruled-meta">Phase 2</span></li>
+          <li class="ruled-row"><a href="https://github.com/developer-assistants/awesome-sdlc/blob/main/templates/architecture-design-doc.md">architecture-design-doc.md</a><span class="ruled-desc">Context, components, data model, failure modes, and rollout plan.</span><span class="ruled-meta">Phase 3</span></li>
+          <li class="ruled-row"><a href="https://github.com/developer-assistants/awesome-sdlc/blob/main/templates/test-plan.md">test-plan.md</a><span class="ruled-desc">Test matrix, staging setup, automated suites, and exit gates.</span><span class="ruled-meta">Phase 5</span></li>
+          <li class="ruled-row"><a href="https://github.com/developer-assistants/awesome-sdlc/blob/main/templates/release-runbook.md">release-runbook.md</a><span class="ruled-desc">Pre-flight checks, deployment steps, and rollback commands.</span><span class="ruled-meta">Phase 6</span></li>
+          <li class="ruled-row"><a href="https://github.com/developer-assistants/awesome-sdlc/blob/main/templates/post-mortem.md">post-mortem.md</a><span class="ruled-desc">Blameless incident timeline, root cause, and follow-up tasks.</span><span class="ruled-meta">Phase 7</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="../">awesome-sdlc</a>
+          <p class="footer-note">Open-source SDLC guides, templates, diagrams, and browser tools by Developer Assistants.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Guides</div>
+          <ul class="footer-links">
+            <li><a href="../meaning/">Meaning</a></li>
+            <li><a href="../phases/">Phases</a></li>
+            <li><a href="../models/">Models</a></li>
+            <li><a href="../agile/">Agile</a></li>
+            <li><a href="../waterfall/">Waterfall</a></li>
+            <li><a href="../examples/">Examples</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Tools</div>
+          <ul class="footer-links">
+            <li><a href="../checklist/">Checklist</a></li>
+            <li><a href="../diagram/">Diagram</a></li>
+            <li><a href="../templates/">Templates</a></li>
+            <li><a href="../interview-questions/">Quiz &amp; Q&amp;A</a></li>
+            <li><a href="../cheat-sheet/">Cheat sheet</a></li>
+            <li><a href="https://github.com/developer-assistants/awesome-sdlc">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>MIT License</span>
+        <span><a href="../sitemap.xml">Sitemap</a> / <a href="../llms.txt">llms.txt</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/tools.js" defer></script>
+</body>
+</html>
