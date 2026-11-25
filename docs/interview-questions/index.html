@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
-  <title>SDLC Interview Questions, Answers & Interactive Quiz</title>
-  <meta name="description" content="Common Software Development Life Cycle (SDLC) interview questions with direct engineering answers, plus an interactive 8-question SDLC quiz.">
+  <title>SDLC Interview Questions, Answers & 15-Question Interactive Quiz</title>
+  <meta name="description" content="16 Software Development Life Cycle (SDLC) interview questions with direct engineering answers, plus a 15-question interactive scenario quiz.">
   <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/interview-questions/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SDLC Interview Questions, Answers & Interactive Quiz">
-  <meta property="og:description" content="Common Software Development Life Cycle (SDLC) interview questions with direct engineering answers, plus an interactive 8-question SDLC quiz.">
+  <meta property="og:title" content="SDLC Interview Questions, Answers & 15-Question Interactive Quiz">
+  <meta property="og:description" content="16 Software Development Life Cycle (SDLC) interview questions with direct engineering answers, plus a 15-question interactive scenario quiz.">
   <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/interview-questions/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="SDLC Interview Questions, Answers & Interactive Quiz">
-  <meta name="twitter:description" content="Common Software Development Life Cycle (SDLC) interview questions with direct engineering answers, plus an interactive 8-question SDLC quiz.">
+  <meta name="twitter:title" content="SDLC Interview Questions, Answers & 15-Question Interactive Quiz">
+  <meta name="twitter:description" content="16 Software Development Life Cycle (SDLC) interview questions with direct engineering answers, plus a 15-question interactive scenario quiz.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Interview Questions, Answers & Interactive Quiz","headline":"SDLC Interview Questions, Answers & Interactive Quiz","description":"Common Software Development Life Cycle (SDLC) interview questions with direct engineering answers, plus an interactive 8-question SDLC quiz.","url":"https://developer-assistants.github.io/awesome-sdlc/interview-questions/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Interview Questions, Answers & 15-Question Interactive Quiz","headline":"SDLC Interview Questions, Answers & 15-Question Interactive Quiz","description":"16 Software Development Life Cycle (SDLC) interview questions with direct engineering answers, plus a 15-question interactive scenario quiz.","url":"https://developer-assistants.github.io/awesome-sdlc/interview-questions/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -46,7 +46,7 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>Interview questions</span></nav>
         <h1>SDLC interview questions and quiz</h1>
-        <p class="lead">Practice with an 8-question scenario quiz, then review concise answers to the most frequent developer and QA interview questions.</p>
+        <p class="lead">Test your knowledge with 15 engineering scenario questions, then review concise answers to 16 common developer, QA, and tech-lead interview questions.</p>
       </div>
     </section>
 
@@ -55,7 +55,7 @@
         <div class="tool-panel" data-quiz-app>
           <div style="display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);">
             <h2>Interactive SDLC quiz</h2>
-            <span class="ruled-meta" data-quiz-progress>Question 1 of 8</span>
+            <span class="ruled-meta" data-quiz-progress>Question 1 of 15</span>
           </div>
           <h3 data-quiz-question style="margin-bottom: var(--space-md);"></h3>
           <div data-quiz-options></div>
@@ -70,46 +70,92 @@
 
     <section class="section section--alt">
       <div class="container prose">
-        <h2>Common SDLC interview questions</h2>
+        <h2>Core SDLC fundamentals</h2>
 
         <details class="qa-item" open>
           <summary>1. What are the seven phases of SDLC in order?</summary>
-          <p>Planning, requirements analysis, system design, implementation, testing, deployment, and maintenance. Some teams merge planning and requirements into a six-phase list.</p>
+          <p>Planning, requirements analysis, system design, implementation, testing, deployment, and maintenance. Some organizations merge planning and requirements into a six-phase model.</p>
         </details>
 
         <details class="qa-item">
           <summary>2. What is the difference between verification and validation?</summary>
-          <p>Verification checks whether the software matches its specification ("did we build the product right?") using reviews, static analysis, and unit/integration tests. Validation checks whether the software solves the user problem ("did we build the right product?") through user acceptance testing and beta feedback.</p>
+          <p>Verification checks whether the software matches its specification ("did we build the product right?") via reviews, static analysis, and unit/integration tests. Validation checks whether the software solves the user problem ("did we build the right product?") through UAT and customer feedback.</p>
         </details>
 
         <details class="qa-item">
-          <summary>3. When would you choose Waterfall over Agile?</summary>
-          <p>Choose Waterfall when requirements are fixed and verified up front, external compliance demands signed stage gates, or the work is a fixed-scope vendor contract where mid-project scope changes are disallowed.</p>
+          <summary>3. Why is fixing a bug in production so much more expensive than in design?</summary>
+          <p>In design, a fix is a quick edit to a spec or diagram. In production, it triggers incident response, debugging live traffic, writing a backward-compatible patch, migrating corrupted data, running regression tests, and communicating with affected users.</p>
         </details>
 
         <details class="qa-item">
-          <summary>4. What is shift-left testing?</summary>
+          <summary>4. What is the difference between functional and non-functional requirements?</summary>
+          <p>Functional requirements define what the system does (features, workflows, calculations). Non-functional requirements define how well it operates (latency, throughput, uptime SLO, encryption, accessibility, and regulatory compliance).</p>
+        </details>
+
+        <h2>Models: Agile, Waterfall, V-Model, Spiral</h2>
+
+        <details class="qa-item">
+          <summary>5. When would you choose Waterfall over Agile?</summary>
+          <p>Choose Waterfall when requirements are fixed and verified up front, external compliance requires signed stage gates, or the project is a fixed-scope vendor contract where mid-project scope changes are disallowed.</p>
+        </details>
+
+        <details class="qa-item">
+          <summary>6. How do Scrum and Kanban differ inside Agile SDLC?</summary>
+          <p>Scrum uses fixed-length sprints with planned commitments, demos, and retrospectives. Kanban uses continuous flow with explicit work-in-progress (WIP) limits and no mandatory sprint boundaries.</p>
+        </details>
+
+        <details class="qa-item">
+          <summary>7. What is the main weakness of the V-Model?</summary>
+          <p>Like Waterfall, the V-Model assumes requirements stay stable. If product needs change halfway through implementation, both specification documents and paired test plans have to be rewritten.</p>
+        </details>
+
+        <details class="qa-item">
+          <summary>8. When does the Spiral model make sense?</summary>
+          <p>Use Spiral for large, high-risk, or novel engineering efforts where retiring a technical unknown via early prototypes matters more than minimizing upfront risk-analysis overhead.</p>
+        </details>
+
+        <h2>Testing, CI/CD, and Security (DevSecOps)</h2>
+
+        <details class="qa-item">
+          <summary>9. What is shift-left testing?</summary>
           <p>Shift-left testing moves quality checks earlier in the lifecycle: reviewing requirements for testability, writing automated unit and contract tests during development, and running security scanners on every pull request rather than waiting for a final QA stage.</p>
         </details>
 
         <details class="qa-item">
-          <summary>5. What is a Requirements Traceability Matrix (RTM)?</summary>
-          <p>An RTM is a table linking every requirement ID to its design component, test cases, and release verification result. It proves that no requirement was missed and no extra untested scope slipped in.</p>
+          <summary>10. What is a Requirements Traceability Matrix (RTM)?</summary>
+          <p>An RTM links every requirement ID to its design component, test cases, and release verification result. It proves that every requirement was tested and helps auditors verify compliance.</p>
         </details>
 
         <details class="qa-item">
-          <summary>6. How do CI/CD pipelines fit into SDLC?</summary>
-          <p>Continuous Integration automates the boundary between implementation and testing by building and testing every commit. Continuous Delivery and Deployment automate packaging, staging verification, and production rollout with fast rollbacks.</p>
+          <summary>11. How do CI/CD pipelines fit into SDLC?</summary>
+          <p>Continuous Integration automates building, linting, and testing every commit. Continuous Delivery and Deployment automate artifact packaging, staging verification, and canary or blue-green production rollouts.</p>
         </details>
 
         <details class="qa-item">
-          <summary>7. What are the four types of software maintenance?</summary>
+          <summary>12. What is the difference between SAST and DAST in Secure SDLC?</summary>
+          <p>SAST (Static Application Security Testing) scans source code and dependencies during implementation without running the app. DAST (Dynamic Application Security Testing) probes a running staging instance from the outside to catch runtime auth, header, or injection flaws.</p>
+        </details>
+
+        <h2>Architecture, Deployment, and Maintenance</h2>
+
+        <details class="qa-item">
+          <summary>13. How do you run zero-downtime database migrations?</summary>
+          <p>Use expand-and-contract migrations: add new nullable columns first, deploy code that writes to both old and new fields, backfill existing rows, switch reads to the new column, and drop the old column in a later deployment.</p>
+        </details>
+
+        <details class="qa-item">
+          <summary>14. What is the difference between blue-green and canary deployments?</summary>
+          <p>Blue-green runs two identical production environments and flips 100% of traffic from old (blue) to new (green) at once. Canary routes a small slice of live traffic (such as 5%) to the new version first and expands gradually only if error rates and latency stay healthy.</p>
+        </details>
+
+        <details class="qa-item">
+          <summary>15. What are the four types of software maintenance?</summary>
           <p>Corrective (bug fixes), adaptive (environment, OS, or dependency updates), perfective (performance and UX improvements), and preventive (refactoring and technical debt reduction).</p>
         </details>
 
         <details class="qa-item">
-          <summary>8. What is the main weakness of the V-Model?</summary>
-          <p>Like Waterfall, the V-Model assumes requirements stay stable. If product needs change halfway through implementation, both specification documents and paired test plans have to be rewritten.</p>
+          <summary>16. What makes a post-mortem effective after a production outage?</summary>
+          <p>A useful post-mortem is blameless, documents an exact UTC timeline, identifies systemic root causes (missing alert, unsafe migration, untested failover), and assigns dated engineering action items tracked to completion.</p>
         </details>
       </div>
     </section>

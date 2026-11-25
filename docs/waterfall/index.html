@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
-  <title>Waterfall SDLC: Stages, Pros, Cons, and When to Use It</title>
-  <meta name="description" content="Practical guide to the Waterfall Software Development Life Cycle model: sequential stages, strengths, failure modes, and when Waterfall outperforms Agile.">
+  <title>Waterfall SDLC: Stage Gates, CCB, Pros, Cons & Hybrid Models</title>
+  <meta name="description" content="Engineering guide to Waterfall SDLC: sequential stage-gate deliverables, Change Control Board (CCB), Earned Value tracking, failure modes, and Water-Scrum-Fall hybrids.">
   <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/waterfall/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Waterfall SDLC: Stages, Pros, Cons, and When to Use It">
-  <meta property="og:description" content="Practical guide to the Waterfall Software Development Life Cycle model: sequential stages, strengths, failure modes, and when Waterfall outperforms Agile.">
+  <meta property="og:title" content="Waterfall SDLC: Stage Gates, CCB, Pros, Cons & Hybrid Models">
+  <meta property="og:description" content="Engineering guide to Waterfall SDLC: sequential stage-gate deliverables, Change Control Board (CCB), Earned Value tracking, failure modes, and Water-Scrum-Fall hybrids.">
   <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/waterfall/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Waterfall SDLC: Stages, Pros, Cons, and When to Use It">
-  <meta name="twitter:description" content="Practical guide to the Waterfall Software Development Life Cycle model: sequential stages, strengths, failure modes, and when Waterfall outperforms Agile.">
+  <meta name="twitter:title" content="Waterfall SDLC: Stage Gates, CCB, Pros, Cons & Hybrid Models">
+  <meta name="twitter:description" content="Engineering guide to Waterfall SDLC: sequential stage-gate deliverables, Change Control Board (CCB), Earned Value tracking, failure modes, and Water-Scrum-Fall hybrids.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"Waterfall SDLC: Stages, Pros, Cons, and When to Use It","headline":"Waterfall SDLC: Stages, Pros, Cons, and When to Use It","description":"Practical guide to the Waterfall Software Development Life Cycle model: sequential stages, strengths, failure modes, and when Waterfall outperforms Agile.","url":"https://developer-assistants.github.io/awesome-sdlc/waterfall/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"Waterfall SDLC: Stage Gates, CCB, Pros, Cons & Hybrid Models","headline":"Waterfall SDLC: Stage Gates, CCB, Pros, Cons & Hybrid Models","description":"Engineering guide to Waterfall SDLC: sequential stage-gate deliverables, Change Control Board (CCB), Earned Value tracking, failure modes, and Water-Scrum-Fall hybrids.","url":"https://developer-assistants.github.io/awesome-sdlc/waterfall/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -46,30 +46,51 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>Waterfall SDLC</span></nav>
         <h1>Waterfall SDLC</h1>
-        <p class="lead">The sequential SDLC model where each stage completes and signs off before the next stage starts.</p>
+        <p class="lead">The sequential SDLC model where each stage completes, passes a formal gate review, and freezes its specification before the next stage starts.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container prose">
-        <h2>How Waterfall works</h2>
-        <p>In Waterfall, work flows downward through requirements, system design, implementation, testing, deployment, and maintenance. Each stage ends with a formal review gate and frozen documentation. Moving backward to change an earlier decision requires a formal change request.</p>
+        <h2>Stage gates and deliverables</h2>
+        <p>In Waterfall, progress moves downward across distinct phases. Each gate requires documented sign-off so scope, cost, and schedule stay locked:</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Stage</th><th>Primary deliverable</th><th>Sign-off authority</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1. Feasibility &amp; Planning</td><td>Project charter, budget, master Gantt schedule</td><td>Executive sponsor</td></tr>
+              <tr><td>2. Requirements</td><td>Baselined Software Requirements Specification (SRS)</td><td>Business owner &amp; compliance</td></tr>
+              <tr><td>3. System Design</td><td>High-level (HLD) and low-level (LLD) design specs</td><td>Architecture Review Board</td></tr>
+              <tr><td>4. Implementation</td><td>Compiled build, unit tests, code inspection logs</td><td>Engineering lead</td></tr>
+              <tr><td>5. Verification &amp; UAT</td><td>Test execution report, defect closure log, UAT sign-off</td><td>QA lead &amp; client</td></tr>
+              <tr><td>6. Release &amp; Maintenance</td><td>Production cutover, operations manual, support SLA</td><td>Operations / Change board</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How scope changes work: the Change Control Board (CCB)</h2>
+        <p>Once the SRS is baselined, developers do not accept informal scope additions. Any requested change goes through a Change Control Board (CCB) that evaluates schedule impact, budget delta, and test-plan updates before approving or deferring the request. This prevents silent scope creep on fixed-price contracts.</p>
 
         <h2>Where Waterfall works well</h2>
         <ul>
-          <li>Fixed-price vendor contracts where scope, deliverables, and payment milestones must be agreed before work begins.</li>
-          <li>Hardware-coupled or embedded systems where physical manufacturing deadlines lock interfaces early.</li>
-          <li>Small, well-understood internal migrations where requirements are already documented and stable.</li>
-          <li>Audited regulatory environments that require signed stage-gate evidence before code enters production.</li>
+          <li>Fixed-price vendor contracts where scope, acceptance tests, and payment milestones must be legally defined before work starts.</li>
+          <li>Hardware-coupled or embedded systems where physical manufacturing deadlines lock electrical and protocol interfaces months ahead.</li>
+          <li>Well-understood regulatory reporting or data migrations where rules are published by an external authority and rarely change mid-year.</li>
+          <li>Multi-vendor enterprise integrations requiring formal interface control documents (ICDs) between separate companies.</li>
         </ul>
 
         <h2>Where Waterfall breaks down</h2>
-        <p>Because integration and testing happen near the end of the schedule, misunderstood requirements or architectural bottlenecks stay hidden for months. When schedules slip during implementation, testing is often compressed to keep the launch date, which raises production defect rates.</p>
+        <p>Integration and system testing happen near the end of the timeline, so hidden assumptions in the SRS or performance bottlenecks often surface months after coding began. When implementation slips, teams frequently compress testing to hold the launch date, shipping high defect counts into production.</p>
 
         <h2>Modern hybrid: Water-Scrum-Fall</h2>
-        <p>Many enterprises combine Waterfall budgeting and annual release governance with Agile engineering sprints inside the build phase. This keeps financial predictability while still letting developers test and integrate code continuously.</p>
+        <p>Many large enterprises run Waterfall budgeting and compliance sign-offs at the portfolio level while engineering teams execute two-week Agile sprints with automated CI/CD inside the build phase. This preserves executive predictability while catching integration defects early.</p>
 
-        <p>Compare with <a href="../agile/">Agile SDLC</a> or generate a Waterfall diagram in the <a href="../diagram/">SDLC Diagram Generator</a>.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="../agile/">Compare with Agile SDLC</a>
+          <a class="btn" href="../diagram/">Generate a Waterfall diagram</a>
+        </div>
       </div>
     </section>
   </main>

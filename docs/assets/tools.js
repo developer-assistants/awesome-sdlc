@@ -92,6 +92,18 @@
         { title: "6. Deployment", items: ["Submit approved change ticket with maintenance window", "Execute rehearsed deployment and rollback runbook", "Archive deployment evidence for audit logs"] },
         { title: "7. Maintenance", items: ["Conduct quarterly disaster recovery drills", "Review access control lists and audit trails", "Run formal post-incident reviews for Sev-1/Sev-2 events"] }
       ]
+    },
+    data: {
+      name: "Data / ML Pipeline",
+      phases: [
+        { title: "1. Planning", items: ["Define target metric and offline baseline", "Confirm data licensing, PII boundaries, and compute budget", "Assign data engineering and model owner"] },
+        { title: "2. Requirements analysis", items: ["Specify input schemas, freshness SLA, and latency budget", "Define data quality checks for nulls, drift, and duplicates", "Document fallback behavior when upstream data is delayed"] },
+        { title: "3. System design", items: ["Design ingestion, feature store, and training DAGs", "Plan reproducible dataset and model artifact versioning", "Separate staging and production inference endpoints"] },
+        { title: "4. Implementation", items: ["Write deterministic transformations with unit tests", "Pin library versions and container base images", "Log training parameters, dataset hash, and eval metrics"] },
+        { title: "5. Testing", items: ["Run schema validation and backfills on historical snapshots", "Check model quality across slices and edge cases", "Benchmark inference p95 latency and memory ceiling"] },
+        { title: "6. Deployment", items: ["Run shadow mode alongside existing baseline", "Promote via canary traffic split with automated rollback", "Publish model card and lineage metadata"] },
+        { title: "7. Maintenance", items: ["Monitor input drift, prediction distribution, and pipeline lag", "Schedule periodic retraining and evaluation gates", "Archive deprecated datasets per retention policy"] }
+      ]
     }
   };
 
@@ -465,6 +477,31 @@
         }
         out.push('<rect x="' + (w / 2 - 75) + '" y="358" width="150" height="38" rx="6" fill="' + accent + '" stroke="' + ink + '" stroke-width="1.5"/>');
         out.push('<text x="' + (w / 2) + '" y="382" text-anchor="middle" font-family="Red Hat Text, system-ui, sans-serif" font-size="13" font-weight="600" fill="' + ink + '">Implementation</text>');
+      } else if (model === "devops") {
+        var leftCx = 275;
+        var rightCx = 585;
+        var cy2 = 248;
+        var dr = 118;
+        out.push('<circle cx="' + leftCx + '" cy="' + cy2 + '" r="' + dr + '" fill="none" stroke="' + ink + '" stroke-width="2.5"/>');
+        out.push('<circle cx="' + rightCx + '" cy="' + cy2 + '" r="' + dr + '" fill="none" stroke="' + accent + '" stroke-width="2.5"/>');
+        out.push('<text x="' + leftCx + '" y="' + (cy2 + 5) + '" text-anchor="middle" font-family="Red Hat Display, system-ui, sans-serif" font-size="16" font-weight="600" fill="' + ink + '">Continuous Dev</text>');
+        out.push('<text x="' + rightCx + '" y="' + (cy2 + 5) + '" text-anchor="middle" font-family="Red Hat Display, system-ui, sans-serif" font-size="16" font-weight="600" fill="' + ink + '">Continuous Ops</text>');
+        var devNodes = [
+          { x: 165, y: 148, t: "1. Plan" },
+          { x: 165, y: 348, t: "2. Code" },
+          { x: 385, y: 148, t: "3. Build" },
+          { x: 385, y: 348, t: "4. Test" }
+        ];
+        var opsNodes = [
+          { x: 475, y: 148, t: "5. Release" },
+          { x: 695, y: 148, t: "6. Deploy" },
+          { x: 695, y: 348, t: "7. Operate" },
+          { x: 475, y: 348, t: "8. Monitor" }
+        ];
+        devNodes.concat(opsNodes).forEach(function (n, idx) {
+          out.push('<rect x="' + (n.x - 56) + '" y="' + (n.y - 18) + '" width="112" height="36" rx="6" fill="' + card + '" stroke="' + (idx >= 4 ? green : ink) + '" stroke-width="1.5"/>');
+          out.push('<text x="' + n.x + '" y="' + (n.y + 5) + '" text-anchor="middle" font-family="Red Hat Text, system-ui, sans-serif" font-size="13" font-weight="500" fill="' + ink + '">' + n.t + '</text>');
+        });
       } else {
         /* spiral */
         var scx = w / 2;
@@ -490,6 +527,12 @@
           "flowchart LR",
           "  R[Requirements] --> S[System Design] --> A[Architecture] --> M[Module Design] --> C[Implementation]",
           "  C --> UT[Unit Test] --> IT[Integration Test] --> ST[System Test] --> AT[Acceptance Test]"
+        ].join("\n");
+      }
+      if (model === "devops") {
+        return [
+          "flowchart LR",
+          "  Plan --> Code --> Build --> Test --> Release --> Deploy --> Operate --> Monitor --> Plan"
         ].join("\n");
       }
       var lines = ["flowchart LR"];
@@ -719,6 +762,45 @@
           "## 3. Action items",
           "- [ ] Add automated regression test for the failing path.",
           "- [ ] Tighten canary alert threshold before full traffic shift."
+        ].join("\n"),
+        adr: [
+          "# ADR-0001: " + name,
+          "",
+          "- Date: " + date,
+          "- Status: Proposed",
+          "- Deciders: " + owner,
+          "- Stack: " + stack,
+          "",
+          "## Context",
+          scope,
+          "",
+          "## Decision",
+          "Adopt the simplest architecture that meets latency, reliability, and team maintenance limits.",
+          "",
+          "## Options considered",
+          "1. Chosen option: predictable operational cost and clear ownership.",
+          "2. Alternative option: higher setup complexity without clear short-term payoff.",
+          "",
+          "## Consequences",
+          "- Positive: faster onboarding and simpler rollback path.",
+          "- Negative: revisit if request volume grows 10x."
+        ].join("\n"),
+        security: [
+          "# SSDLC Security Review: " + name,
+          "",
+          "- Reviewer: " + owner,
+          "- Date: " + date,
+          "- Stack: " + stack,
+          "",
+          "## 1. Scope and sensitive data",
+          scope,
+          "",
+          "## 2. Controls checklist",
+          "- [ ] Authentication and object-level authorization enforced on all write endpoints.",
+          "- [ ] Strict input schema validation and parameterized database queries.",
+          "- [ ] Secrets stored outside Git; tokens and PII scrubbed from logs.",
+          "- [ ] Rate limits applied to login, webhook, and public API routes.",
+          "- [ ] Automated dependency audit and SAST pass with zero critical findings."
         ].join("\n")
       };
 
@@ -817,6 +899,83 @@
         options: ["Big-bang cutover", "Canary deployment", "Waterfall handoff", "Cold backup"],
         answer: 1,
         note: "Canary releases limit blast radius by exposing a small slice of traffic to the new build while watching error rates and latency."
+      },
+      {
+        q: "Which four metrics are tracked by DORA to measure software delivery performance?",
+        options: [
+          "Lines of code, story points, bug count, and meeting hours",
+          "Deployment frequency, lead time for changes, change failure rate, and time to restore service",
+          "CPU usage, memory usage, disk IOPS, and network throughput",
+          "Velocity, burndown slope, sprint count, and backlog size"
+        ],
+        answer: 1,
+        note: "DORA measures throughput (deployment frequency, lead time) alongside stability (change failure rate, failed deployment recovery time)."
+      },
+      {
+        q: "Why should database schema migrations be backward-compatible during zero-downtime deployments?",
+        options: [
+          "Because SQL databases forbid adding columns",
+          "Because old and new application versions run simultaneously during rolling or canary deployments",
+          "Because ORMs ignore migrations in production",
+          "Because backward compatibility removes the need for backups"
+        ],
+        answer: 1,
+        note: "Using expand-and-contract migrations ensures the previous app version keeps working while traffic shifts and makes rollbacks safe."
+      },
+      {
+        q: "What is the primary purpose of an Architecture Decision Record (ADR)?",
+        options: [
+          "Replacing unit tests with prose",
+          "Capturing the context, trade-offs, and consequences of a technical decision in version control",
+          "Tracking employee attendance during design reviews",
+          "Auto-generating REST API clients"
+        ],
+        answer: 1,
+        note: "Short ADRs committed next to code explain why a decision was made so future engineers do not repeat rejected experiments."
+      },
+      {
+        q: "In Secure SDLC (SSDLC), when should threat modeling happen?",
+        options: [
+          "Only after a production breach",
+          "During requirements and system design before code is written",
+          "Right after decommissioning the service",
+          "Only during annual marketing audits"
+        ],
+        answer: 1,
+        note: "Finding missing auth boundaries or unsafe data flows during design prevents expensive rewrites later."
+      },
+      {
+        q: "What is the difference between Definition of Ready (DoR) and Definition of Done (DoD) in Agile?",
+        options: [
+          "DoR checks whether a backlog item is clear enough to start; DoD checks whether work meets quality gates to ship",
+          "DoR is for QA engineers; DoD is for product managers",
+          "DoR applies to Waterfall; DoD applies to Spiral",
+          "They are identical checklists"
+        ],
+        answer: 0,
+        note: "DoR prevents ambiguous stories from entering a sprint; DoD enforces tests, reviews, docs, and deployment readiness."
+      },
+      {
+        q: "What is a blameless post-mortem focused on after a production outage?",
+        options: [
+          "Identifying which engineer to penalize",
+          "Documenting timeline, systemic root causes, and concrete engineering fixes to prevent recurrence",
+          "Hiding incident details from engineering teams",
+          "Rewriting the entire codebase from scratch"
+        ],
+        answer: 1,
+        note: "Blameless post-mortems treat outages as system and process gaps, encouraging accurate timelines and durable safeguards."
+      },
+      {
+        q: "Why does the testing pyramid recommend more unit tests than end-to-end UI tests?",
+        options: [
+          "UI tests cannot run in CI",
+          "Unit tests run in milliseconds, isolate failures clearly, and cost less to maintain than brittle full-stack UI suites",
+          "End-to-end tests are deprecated",
+          "Unit tests eliminate the need for staging environments"
+        ],
+        answer: 1,
+        note: "A broad base of fast unit tests paired with targeted integration and end-to-end tests gives fast feedback without flaky CI builds."
       }
     ];
 

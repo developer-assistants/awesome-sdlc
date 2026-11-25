@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
-  <title>SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative</title>
-  <meta name="description" content="Compare the five main SDLC models and use the interactive SDLC Model Selector to pick the right methodology for your project.">
+  <title>SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative & DevOps</title>
+  <meta name="description" content="Compare all major SDLC models (Waterfall, Agile, V-Model, Spiral, Iterative, RAD, DevOps) and use the interactive SDLC Model Selector to pick the right methodology.">
   <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/models/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative">
-  <meta property="og:description" content="Compare the five main SDLC models and use the interactive SDLC Model Selector to pick the right methodology for your project.">
+  <meta property="og:title" content="SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative & DevOps">
+  <meta property="og:description" content="Compare all major SDLC models (Waterfall, Agile, V-Model, Spiral, Iterative, RAD, DevOps) and use the interactive SDLC Model Selector to pick the right methodology.">
   <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/models/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative">
-  <meta name="twitter:description" content="Compare the five main SDLC models and use the interactive SDLC Model Selector to pick the right methodology for your project.">
+  <meta name="twitter:title" content="SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative & DevOps">
+  <meta name="twitter:description" content="Compare all major SDLC models (Waterfall, Agile, V-Model, Spiral, Iterative, RAD, DevOps) and use the interactive SDLC Model Selector to pick the right methodology.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative","headline":"SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative","description":"Compare the five main SDLC models and use the interactive SDLC Model Selector to pick the right methodology for your project.","url":"https://developer-assistants.github.io/awesome-sdlc/models/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative & DevOps","headline":"SDLC Models Compared: Waterfall, Agile, V-Model, Spiral, Iterative & DevOps","description":"Compare all major SDLC models (Waterfall, Agile, V-Model, Spiral, Iterative, RAD, DevOps) and use the interactive SDLC Model Selector to pick the right methodology.","url":"https://developer-assistants.github.io/awesome-sdlc/models/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -46,7 +46,7 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC models</span></nav>
         <h1>SDLC models and methodology selector</h1>
-        <p class="lead">Different projects face different uncertainty and compliance rules. Choose your project parameters below to see which SDLC model fits best.</p>
+        <p class="lead">Every SDLC model arranges the same seven phases differently to trade off predictability, speed of feedback, and audit rigor. Score your project constraints below.</p>
       </div>
     </section>
 
@@ -110,17 +110,43 @@
         <div class="table-wrap" style="margin-top: var(--space-lg);">
           <table class="data-table">
             <thead>
-              <tr><th>Model</th><th>Best for</th><th>Change tolerance</th><th>Testing timing</th><th>Main risk</th></tr>
+              <tr><th>Model</th><th>Best for</th><th>Change tolerance</th><th>Testing timing</th><th>Documentation</th><th>Main risk</th></tr>
             </thead>
             <tbody>
-              <tr><td><a href="../agile/">Agile (Scrum / Kanban)</a></td><td>SaaS, consumer apps, startups</td><td>High</td><td>Continuous inside every sprint</td><td>Scope drift without strong backlog grooming</td></tr>
-              <tr><td><a href="../waterfall/">Waterfall</a></td><td>Fixed-bid contracts, stable specs</td><td>Low</td><td>After implementation finishes</td><td>Late discovery of requirement gaps</td></tr>
-              <tr><td>V-Model</td><td>Medical, automotive, regulated finance</td><td>Low</td><td>Test design starts alongside specs</td><td>Heavy documentation overhead</td></tr>
-              <tr><td>Spiral</td><td>Large, high-risk, novel R&amp;D systems</td><td>Medium to high</td><td>End of every risk cycle</td><td>Costly risk analysis expertise</td></tr>
-              <tr><td>Iterative</td><td>Platform migrations, phased rollouts</td><td>Medium</td><td>After each incremental build</td><td>Early architecture may need rework</td></tr>
+              <tr><td><a href="../agile/">Agile (Scrum / Kanban)</a></td><td>SaaS, consumer apps, startups</td><td>High</td><td>Continuous inside every sprint</td><td>Lightweight (backlog, ADRs)</td><td>Scope drift without backlog discipline</td></tr>
+              <tr><td><a href="../waterfall/">Waterfall</a></td><td>Fixed-bid contracts, stable specs</td><td>Low</td><td>After implementation finishes</td><td>Heavy upfront sign-offs</td><td>Late discovery of requirement gaps</td></tr>
+              <tr><td>V-Model</td><td>Medical, automotive, regulated finance</td><td>Low</td><td>Test specs written alongside design</td><td>Full RTM and audit trails</td><td>High cost if requirements shift</td></tr>
+              <tr><td>Spiral</td><td>Large, high-risk, novel R&amp;D systems</td><td>Medium to high</td><td>End of every risk cycle</td><td>Risk logs and prototypes</td><td>Requires senior risk-analysis skill</td></tr>
+              <tr><td>Iterative</td><td>Platform migrations, phased rollouts</td><td>Medium</td><td>After each incremental build</td><td>Milestone specs</td><td>Early architecture may need rework</td></tr>
+              <tr><td>RAD (Rapid App Dev)</td><td>Internal tools, UI prototypes, tight deadlines</td><td>High</td><td>Prototype demos with users</td><td>Minimal</td><td>Weak scalability if prototype becomes prod</td></tr>
+              <tr><td>DevOps / Continuous Delivery</td><td>Cloud services shipping daily</td><td>High</td><td>Automated CI/CD gates on every PR</td><td>Docs-as-code in Git</td><td>Requires strong test automation investment</td></tr>
             </tbody>
           </table>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container prose">
+        <h2>Deep dive into each model</h2>
+
+        <h3>1. Agile (Scrum and Kanban)</h3>
+        <p>Agile delivers small vertical slices of working software every one to three weeks. Product owners reprioritize the backlog continuously based on real usage rather than guessing six months ahead. Strengths: fast feedback, early revenue, and lower risk of building the wrong product. Limits: needs active stakeholder availability and disciplined automated testing to keep regression costs flat. Read the full <a href="../agile/">Agile SDLC guide</a>.</p>
+
+        <h3>2. Waterfall</h3>
+        <p>Waterfall moves linearly from requirements through design, coding, testing, and release with signed gates between phases. Strengths: clear budgets, milestone dates, and contractual accountability when specifications are known and fixed. Limits: rigid against changing market needs and prone to late integration surprises. Read the full <a href="../waterfall/">Waterfall SDLC guide</a>.</p>
+
+        <h3>3. V-Model (Verification and Validation)</h3>
+        <p>The V-Model bends Waterfall into a V shape: every left-hand specification phase pairs directly with a right-hand testing phase (Requirements <-> Acceptance Testing, System Design <-> System Testing, Architecture <-> Integration Testing, Module Design <-> Unit Testing). QA writes test cases while architects write specs, catching ambiguity early. It is standard in IEC 62304 medical software and ISO 26262 automotive firmware.</p>
+
+        <h3>4. Spiral model</h3>
+        <p>Each loop of the Spiral passes through four quadrants: setting objectives, analyzing and prototyping the highest technical risk, engineering and verifying the increment, and planning the next loop. Aerospace, defense, and novel distributed databases use Spiral principles when proving a technical unknown (such as sub-millisecond replication) must happen before committing full budget.</p>
+
+        <h3>5. Iterative and incremental</h3>
+        <p>An iterative project ships a working core quickly (v0.1), then expands capability across scheduled milestones (v0.2, v0.3, v1.0). Unlike ad-hoc prototyping, each increment is production-grade and moves the system closer to the target architecture. Database migrations, legacy ERP replacements, and public API rollouts rely heavily on this model.</p>
+
+        <h3>6. DevOps and Continuous Delivery</h3>
+        <p>Modern cloud teams treat DevOps as an operating layer over Agile SDLC. Automated CI/CD pipelines, infrastructure as code (Terraform/OpenTofu), feature flags, and centralized observability collapse the handoff wall between developers and operations so verified commits reach production in minutes rather than quarters.</p>
       </div>
     </section>
   </main>

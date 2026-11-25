@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
-  <title>SDLC Cheat Sheet: One-Page Quick Reference for Developers</title>
-  <meta name="description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing levels, deployment strategies, and artifacts.">
+  <title>SDLC Cheat Sheet: One-Page Quick Reference, DORA & RACI Matrix</title>
+  <meta name="description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing pyramid, deployment strategies, DORA benchmarks, SSDLC gates, and RACI.">
   <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SDLC Cheat Sheet: One-Page Quick Reference for Developers">
-  <meta property="og:description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing levels, deployment strategies, and artifacts.">
+  <meta property="og:title" content="SDLC Cheat Sheet: One-Page Quick Reference, DORA & RACI Matrix">
+  <meta property="og:description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing pyramid, deployment strategies, DORA benchmarks, SSDLC gates, and RACI.">
   <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="SDLC Cheat Sheet: One-Page Quick Reference for Developers">
-  <meta name="twitter:description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing levels, deployment strategies, and artifacts.">
+  <meta name="twitter:title" content="SDLC Cheat Sheet: One-Page Quick Reference, DORA & RACI Matrix">
+  <meta name="twitter:description" content="Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing pyramid, deployment strategies, DORA benchmarks, SSDLC gates, and RACI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Cheat Sheet: One-Page Quick Reference for Developers","headline":"SDLC Cheat Sheet: One-Page Quick Reference for Developers","description":"Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing levels, deployment strategies, and artifacts.","url":"https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Cheat Sheet: One-Page Quick Reference, DORA & RACI Matrix","headline":"SDLC Cheat Sheet: One-Page Quick Reference, DORA & RACI Matrix","description":"Printable one-page Software Development Life Cycle (SDLC) cheat sheet covering all 7 phases, models, testing pyramid, deployment strategies, DORA benchmarks, SSDLC gates, and RACI.","url":"https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -46,7 +46,7 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC cheat sheet</span></nav>
         <h1>SDLC developer cheat sheet</h1>
-        <p class="lead">Concise one-page reference of phases, models, testing layers, and deployment strategies. Press Ctrl+P or Cmd+P to print cleanly.</p>
+        <p class="lead">Concise printable reference of phases, models, testing layers, deployment strategies, DORA metrics, SSDLC gates, and RACI ownership. Press Ctrl+P or Cmd+P to print.</p>
       </div>
     </section>
 
@@ -58,7 +58,7 @@
             <ol style="margin: 0; padding-left: var(--space-lg); color: var(--color-ink-2); font-size: var(--text-sm);">
               <li>Planning: scope, budget, timeline, risks.</li>
               <li>Requirements: PRD, SRS, acceptance criteria.</li>
-              <li>Design: architecture, schema, API contracts.</li>
+              <li>Design: architecture, schema, API contracts, ADRs.</li>
               <li>Implementation: code, PR reviews, CI checks.</li>
               <li>Testing: unit, integration, E2E, security, load.</li>
               <li>Deployment: canary, blue-green, migrations.</li>
@@ -74,6 +74,7 @@
               <li>Safety-critical or audited: V-Model.</li>
               <li>High technical R&amp;D risk: Spiral.</li>
               <li>Clear core, phased features: Iterative.</li>
+              <li>Daily cloud shipping: DevOps / CI-CD.</li>
             </ul>
           </div>
 
@@ -97,6 +98,40 @@
             </ul>
           </div>
         </div>
+
+        <h2 style="margin-top: var(--space-2xl); margin-bottom: var(--space-md);">DORA delivery benchmarks</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Metric</th><th>Elite / High</th><th>Medium</th><th>Low</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Deployment frequency</td><td>Daily or on demand</td><td>Weekly to monthly</td><td>Less than once per quarter</td></tr>
+              <tr><td>Lead time for changes</td><td>Under 1 day</td><td>1 week to 1 month</td><td>1 to 6 months</td></tr>
+              <tr><td>Change failure rate</td><td>0% to 15%</td><td>16% to 30%</td><td>Over 30%</td></tr>
+              <tr><td>Recovery time (MTTR)</td><td>Under 1 hour</td><td>Under 1 day</td><td>1 week or more</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="margin-top: var(--space-2xl); margin-bottom: var(--space-md);">RACI ownership matrix by phase</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Phase</th><th>PM</th><th>Tech Lead</th><th>Engineer</th><th>QA</th><th>SRE / DevOps</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1. Planning</td><td>A / R</td><td>C</td><td>I</td><td>C</td><td>C</td></tr>
+              <tr><td>2. Requirements</td><td>A / R</td><td>C</td><td>C</td><td>C</td><td>I</td></tr>
+              <tr><td>3. System design</td><td>C</td><td>A / R</td><td>R</td><td>C</td><td>C</td></tr>
+              <tr><td>4. Implementation</td><td>I</td><td>A</td><td>R</td><td>C</td><td>I</td></tr>
+              <tr><td>5. Testing</td><td>C</td><td>C</td><td>R</td><td>A / R</td><td>C</td></tr>
+              <tr><td>6. Deployment</td><td>I</td><td>A</td><td>R</td><td>C</td><td>R</td></tr>
+              <tr><td>7. Maintenance</td><td>C</td><td>C</td><td>R</td><td>I</td><td>A / R</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: var(--space-xs); font-size: var(--text-xs); color: var(--color-muted);">R = Responsible, A = Accountable, C = Consulted, I = Informed.</p>
 
         <div class="btn-row" style="margin-top: var(--space-xl);">
           <button type="button" class="btn btn--primary" onclick="window.print()">Print cheat sheet</button>

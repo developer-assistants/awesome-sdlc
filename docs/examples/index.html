@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
-  <title>SDLC Examples: 3 Real-World Software Projects Walked Through</title>
-  <meta name="description" content="Concrete Software Development Life Cycle examples: a SaaS Stripe billing feature, a public REST API, and an offline-first mobile app.">
+  <title>SDLC Examples: 4 Real-World Software Projects Walked Through</title>
+  <meta name="description" content="Four concrete Software Development Life Cycle examples: B2B SaaS Stripe billing, public REST API, FDA medical firmware, and an offline-first mobile app, plus CI gate YAML.">
   <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/examples/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="SDLC Examples: 3 Real-World Software Projects Walked Through">
-  <meta property="og:description" content="Concrete Software Development Life Cycle examples: a SaaS Stripe billing feature, a public REST API, and an offline-first mobile app.">
+  <meta property="og:title" content="SDLC Examples: 4 Real-World Software Projects Walked Through">
+  <meta property="og:description" content="Four concrete Software Development Life Cycle examples: B2B SaaS Stripe billing, public REST API, FDA medical firmware, and an offline-first mobile app, plus CI gate YAML.">
   <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/examples/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="SDLC Examples: 3 Real-World Software Projects Walked Through">
-  <meta name="twitter:description" content="Concrete Software Development Life Cycle examples: a SaaS Stripe billing feature, a public REST API, and an offline-first mobile app.">
+  <meta name="twitter:title" content="SDLC Examples: 4 Real-World Software Projects Walked Through">
+  <meta name="twitter:description" content="Four concrete Software Development Life Cycle examples: B2B SaaS Stripe billing, public REST API, FDA medical firmware, and an offline-first mobile app, plus CI gate YAML.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Examples: 3 Real-World Software Projects Walked Through","headline":"SDLC Examples: 3 Real-World Software Projects Walked Through","description":"Concrete Software Development Life Cycle examples: a SaaS Stripe billing feature, a public REST API, and an offline-first mobile app.","url":"https://developer-assistants.github.io/awesome-sdlc/examples/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Examples: 4 Real-World Software Projects Walked Through","headline":"SDLC Examples: 4 Real-World Software Projects Walked Through","description":"Four concrete Software Development Life Cycle examples: B2B SaaS Stripe billing, public REST API, FDA medical firmware, and an offline-first mobile app, plus CI gate YAML.","url":"https://developer-assistants.github.io/awesome-sdlc/examples/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -46,49 +46,78 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC examples</span></nav>
         <h1>Real-world SDLC examples</h1>
-        <p class="lead">How the seven SDLC phases look in practice across three everyday software engineering projects.</p>
+        <p class="lead">How the seven SDLC phases look in day-to-day engineering across four distinct product types, from startups to regulated hardware.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container prose">
         <h2>Example 1: Adding subscription billing to a B2B SaaS app (Agile)</h2>
-        <p>A six-person SaaS team wants to move from manual PDF invoices to automated card billing.</p>
+        <p>Team: 2 backend engineers, 1 frontend engineer, 1 product manager. Timeline: 4 weeks (two 2-week sprints).</p>
         <ol>
-          <li>Planning: Target a four-week launch for monthly and annual plans; defer enterprise wire transfers to Q3.</li>
-          <li>Requirements: Users upgrade or downgrade plans self-serve; failed charges retry three times over seven days; webhook events must be idempotent.</li>
-          <li>Design: Store subscription state in a local PostgreSQL table synced from Stripe webhooks; never store raw card numbers.</li>
-          <li>Implementation: Build checkout session endpoints, webhook signature verification, and billing settings UI in two two-week sprints.</li>
-          <li>Testing: Replay Stripe CLI test events for payment succeeded, failed, and chargeback scenarios in staging.</li>
-          <li>Deployment: Enable the billing tab for 10% of workspaces via feature flag, verify webhook logs, then open to 100%.</li>
-          <li>Maintenance: Alert on webhook 5xx errors and reconcile subscription counts nightly.</li>
+          <li>Planning: Target self-serve monthly and annual card plans; defer enterprise wire transfers and multi-currency invoicing to Q3.</li>
+          <li>Requirements: Workspaces can upgrade or downgrade mid-cycle with proration; failed charges retry three times over seven days; Stripe webhooks must be idempotent.</li>
+          <li>Design: Store subscription status in a local PostgreSQL table synced via webhooks; never store raw PAN card data so PCI compliance stays at SAQ-A; document schema in an ADR.</li>
+          <li>Implementation: Build checkout session endpoints, HMAC webhook signature verification, and billing settings UI in small PRs with unit tests.</li>
+          <li>Testing: Replay Stripe CLI test events for payment succeeded, failed, disputed, and out-of-order webhook delivery in staging.</li>
+          <li>Deployment: Enable the billing tab for 10% of workspaces behind a feature flag, inspect webhook logs for 48 hours, then roll out to 100%.</li>
+          <li>Maintenance: Alert on webhook 5xx rates above 0.5% and run a nightly reconciliation job against Stripe's API.</li>
         </ol>
 
         <h2>Example 2: Shipping a public rate-limited REST API (Iterative)</h2>
-        <p>A logistics company exposes shipment tracking endpoints to external partners.</p>
+        <p>Team: 4 backend engineers, 1 SRE, 1 QA engineer. Timeline: 8 weeks across two milestones.</p>
         <ol>
-          <li>Planning: Define a 99.95% uptime SLO and assign a dedicated API platform squad.</li>
-          <li>Requirements: OAuth 2.0 client credentials, 120 requests per minute per key, OpenAPI 3.1 docs, and JSON error codes following RFC 9457.</li>
-          <li>Design: Put an API gateway in front of a read-replica database with Redis token-bucket rate limiting.</li>
-          <li>Implementation: Generate server stubs from the OpenAPI contract and write contract tests before wiring resolvers.</li>
-          <li>Testing: Run k6 load tests at 3x expected peak traffic and verify 429 Retry-After headers.</li>
-          <li>Deployment: Release v1 behind a versioned path (/v1/shipments) with canary traffic routing.</li>
-          <li>Maintenance: Publish deprecation headers six months before retiring any field.</li>
+          <li>Planning: Commit to a 99.95% monthly uptime SLO and assign on-call rotation before onboarding external partners.</li>
+          <li>Requirements: OAuth 2.0 client credentials, 120 requests per minute per API key, OpenAPI 3.1 reference docs, and structured RFC 9457 error responses.</li>
+          <li>Design: Place an API gateway in front of read-replica PostgreSQL nodes with Redis token-bucket rate limiting and cursor-based pagination.</li>
+          <li>Implementation: Generate TypeScript/Go contract tests directly from the OpenAPI file so handler changes cannot break response schemas silently.</li>
+          <li>Testing: Execute k6 load tests at 3x expected peak traffic (1,500 RPS), verify HTTP 429 Retry-After headers, and test Redis failover.</li>
+          <li>Deployment: Release under /v1/shipments using canary traffic splits (5%, 25%, 100%) with automated rollback if p95 latency exceeds 300ms.</li>
+          <li>Maintenance: Publish Sunset and Deprecation HTTP headers at least six months before retiring any field.</li>
         </ol>
 
         <h2>Example 3: Firmware update for a medical infusion pump (V-Model)</h2>
-        <p>An embedded systems team updates dosage-calculation firmware under FDA Class II oversight.</p>
+        <p>Team: 8 embedded C engineers, 4 verification engineers, 1 regulatory quality lead. Timeline: 6 months.</p>
         <ol>
-          <li>Planning: Freeze scope, assign safety officer, and schedule formal external audit dates.</li>
-          <li>Requirements: Baseline every dosage boundary and alarm trigger in a traceable SRS document.</li>
-          <li>Design: Map hardware interrupts, memory bounds, and fail-safe shutdown states.</li>
-          <li>Implementation: Write MISRA-C compliant code with mandatory dual-engineer code reviews.</li>
-          <li>Testing: Run unit, hardware-in-the-loop integration, system, and clinical acceptance tests linked 1-to-1 to the SRS.</li>
-          <li>Deployment: Sign firmware binaries with hardware security modules and distribute via controlled hospital updates.</li>
-          <li>Maintenance: Track field telemetry and maintain long-term audit archives.</li>
+          <li>Planning: Freeze scope, assign safety officer under IEC 62304, and lock external audit dates.</li>
+          <li>Requirements: Baseline every dosage limit, occlusion sensor threshold, and audible alarm latency in a Requirements Traceability Matrix (RTM).</li>
+          <li>Design: Map hardware interrupts, deterministic memory bounds (zero dynamic heap allocation), and fail-safe shutdown states.</li>
+          <li>Implementation: Write MISRA-C compliant firmware with mandatory dual-engineer code reviews and static analysis.</li>
+          <li>Testing: Execute unit tests, hardware-in-the-loop (HIL) integration tests, system soak tests (72 hours continuous), and clinical acceptance tests mapped 1-to-1 to the RTM.</li>
+          <li>Deployment: Cryptographically sign firmware images using hardware security modules and distribute via controlled hospital service updates.</li>
+          <li>Maintenance: Retain full build artifacts, compiler versions, and field telemetry for regulatory audit windows.</li>
         </ol>
 
-        <div class="btn-row">
+        <h2>Example 4: Offline-first mobile field inspection app (Agile + Phased Rollout)</h2>
+        <p>Team: 2 mobile engineers, 1 backend engineer, 1 QA engineer. Timeline: 6 weeks.</p>
+        <ol>
+          <li>Planning: Support iOS 16+ and Android 12+, account for 3-day App Store review buffers, and scope offline photo queues.</li>
+          <li>Requirements: Technicians complete inspection forms with zero cellular signal; queued uploads resume automatically on reconnect without duplicate records.</li>
+          <li>Design: Use local SQLite with client-generated UUIDv7 record IDs and an idempotent sync endpoint; store auth tokens in Keychain / Android Keystore.</li>
+          <li>Implementation: Build screens with dynamic font sizing, background upload workers, and automated signed builds in CI.</li>
+          <li>Testing: Test on physical low-end Android and iOS devices under airplane mode, 3G throttling, and mid-upload app kills; run TestFlight beta with 15 field technicians.</li>
+          <li>Deployment: Ship via staged store rollout (10% -> 50% -> 100%) while watching Crashlytics crash-free session rates (target above 99.6%).</li>
+          <li>Maintenance: Update SDK targets annually for Apple and Google store policy deadlines and retire legacy sync APIs safely.</li>
+        </ol>
+
+        <h2>Example CI quality gate (GitHub Actions)</h2>
+        <p>Automating Phase 4 and Phase 5 checks in CI keeps code quality consistent across every pull request:</p>
+        <pre class="code-block">name: SDLC Pull Request Gate
+on: [pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test -- --coverage
+      - run: npm audit --audit-level=high</pre>
+
+        <div class="btn-row" style="margin-top: var(--space-lg);">
           <a class="btn btn--primary" href="../checklist/">Build a checklist for your project</a>
           <a class="btn" href="../templates/">Generate project templates</a>
         </div>

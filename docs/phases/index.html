@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
-  <title>7 SDLC Phases Explained with Real Examples and Deliverables</title>
-  <meta name="description" content="Complete breakdown of all 7 phases of the Software Development Life Cycle (Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance).">
+  <title>7 SDLC Phases Explained with Deliverables, Pitfalls & DORA Metrics</title>
+  <meta name="description" content="Deep engineering guide to all 7 phases of the Software Development Life Cycle: Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance, plus SSDLC and DORA metrics.">
   <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/phases/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="7 SDLC Phases Explained with Real Examples and Deliverables">
-  <meta property="og:description" content="Complete breakdown of all 7 phases of the Software Development Life Cycle (Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance).">
+  <meta property="og:title" content="7 SDLC Phases Explained with Deliverables, Pitfalls & DORA Metrics">
+  <meta property="og:description" content="Deep engineering guide to all 7 phases of the Software Development Life Cycle: Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance, plus SSDLC and DORA metrics.">
   <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/phases/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="7 SDLC Phases Explained with Real Examples and Deliverables">
-  <meta name="twitter:description" content="Complete breakdown of all 7 phases of the Software Development Life Cycle (Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance).">
+  <meta name="twitter:title" content="7 SDLC Phases Explained with Deliverables, Pitfalls & DORA Metrics">
+  <meta name="twitter:description" content="Deep engineering guide to all 7 phases of the Software Development Life Cycle: Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance, plus SSDLC and DORA metrics.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"7 SDLC Phases Explained with Real Examples and Deliverables","headline":"7 SDLC Phases Explained with Real Examples and Deliverables","description":"Complete breakdown of all 7 phases of the Software Development Life Cycle (Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance).","url":"https://developer-assistants.github.io/awesome-sdlc/phases/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"7 SDLC Phases Explained with Deliverables, Pitfalls & DORA Metrics","headline":"7 SDLC Phases Explained with Deliverables, Pitfalls & DORA Metrics","description":"Deep engineering guide to all 7 phases of the Software Development Life Cycle: Planning, Requirements, Design, Implementation, Testing, Deployment, Maintenance, plus SSDLC and DORA metrics.","url":"https://developer-assistants.github.io/awesome-sdlc/phases/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -46,7 +46,7 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>SDLC phases</span></nav>
         <h1>The 7 phases of the software development life cycle</h1>
-        <p class="lead">Every phase takes a concrete input, produces a verifiable artifact, and reduces a specific class of delivery risk.</p>
+        <p class="lead">Every phase takes a concrete input, produces a verifiable artifact, runs a security check, and closes with an explicit exit gate.</p>
       </div>
     </section>
 
@@ -55,44 +55,67 @@
         <div class="table-wrap">
           <table class="data-table">
             <thead>
-              <tr><th>Phase</th><th>Goal</th><th>Typical artifacts</th><th>Exit gate</th></tr>
+              <tr><th>Phase</th><th>Primary goal</th><th>Deliverables</th><th>Security gate (SSDLC)</th><th>Exit gate</th></tr>
             </thead>
             <tbody>
-              <tr><td>1. Planning</td><td>Confirm feasibility, scope, budget, and schedule.</td><td>Project charter, risk register</td><td>Stakeholder go/no-go approval</td></tr>
-              <tr><td>2. Requirements</td><td>Turn goals into testable functional and non-functional specs.</td><td>PRD, SRS, user stories</td><td>Signed-off acceptance criteria</td></tr>
-              <tr><td>3. System design</td><td>Define architecture, database schema, APIs, and security.</td><td>Architecture doc, ERD, OpenAPI spec</td><td>Design review sign-off</td></tr>
-              <tr><td>4. Implementation</td><td>Write clean, reviewed code and automated unit tests.</td><td>Commits, pull requests, CI builds</td><td>Merged PRs with green CI</td></tr>
-              <tr><td>5. Testing</td><td>Verify correctness, performance, and security before release.</td><td>Test plan, QA report, load test</td><td>Zero open Sev-1/Sev-2 bugs</td></tr>
-              <tr><td>6. Deployment</td><td>Ship to production with minimal downtime and rollback safety.</td><td>Release notes, runbook, telemetry</td><td>Production health checks pass</td></tr>
-              <tr><td>7. Maintenance</td><td>Monitor, patch, and evolve the live system.</td><td>Post-mortems, patches, backlog</td><td>Continuous SLO compliance</td></tr>
+              <tr><td>1. Planning</td><td>Confirm feasibility, scope, budget, and timeline.</td><td>Project charter, risk register</td><td>Data classification &amp; compliance scope</td><td>Stakeholder go/no-go</td></tr>
+              <tr><td>2. Requirements</td><td>Write testable functional and non-functional specs.</td><td>PRD, SRS, user stories</td><td>Abuse cases &amp; privacy requirements</td><td>Signed acceptance criteria</td></tr>
+              <tr><td>3. System design</td><td>Define architecture, data model, APIs, and resilience.</td><td>ADD, ERD, ADRs, OpenAPI spec</td><td>Threat model (STRIDE) &amp; auth boundaries</td><td>Design review sign-off</td></tr>
+              <tr><td>4. Implementation</td><td>Write reviewed code, migrations, and unit tests.</td><td>PRs, unit tests, CI artifacts</td><td>Secret scan, SAST, dependency audit</td><td>Merged PRs, green CI</td></tr>
+              <tr><td>5. Testing</td><td>Verify correctness, latency, and security in staging.</td><td>Test plan, QA report, load test</td><td>DAST, authz matrix, pen test</td><td>Zero open Sev-1/Sev-2 bugs</td></tr>
+              <tr><td>6. Deployment</td><td>Ship to production with safe rollback paths.</td><td>Release notes, runbook, metrics</td><td>Signed container image &amp; SBOM</td><td>Healthy canary &amp; SLOs</td></tr>
+              <tr><td>7. Maintenance</td><td>Operate, patch, and evolve the live system.</td><td>Post-mortems, patches, backlog</td><td>CVE patching &amp; access reviews</td><td>Continuous SLO compliance</td></tr>
             </tbody>
           </table>
         </div>
 
         <h2>1. Planning</h2>
-        <p>The team agrees on why the project exists, who pays for it, and what is out of scope. Example: before building a self-serve billing portal, the engineering manager estimates six weeks for two backend engineers and one frontend engineer, confirms Stripe fees, and explicitly defers multi-currency invoicing to phase two.</p>
+        <p>Planning answers whether a project should be built now, what it will cost, and what happens if dependencies slip. Engineers evaluate technical feasibility (TELOS: Technical, Economic, Legal, Operational, Schedule) rather than guessing dates in a vacuum.</p>
+        <p>Concrete example: before building a self-serve billing portal, the engineering manager estimates six weeks for two backend engineers and one frontend engineer, confirms payment gateway transaction fees, verifies PCI SAQ-A scope so raw card numbers never touch company servers, and explicitly defers multi-currency invoicing to phase two.</p>
+        <p>Common pitfall: skipping explicit non-goals. When non-goals are unwritten, every stakeholder assumes their edge case is included in v1.</p>
 
         <h2>2. Requirements analysis</h2>
-        <p>Product and engineering translate business goals into concrete specifications. Functional requirements describe what the system must do (for example, "users can download PDF invoices for the past 24 months"). Non-functional requirements define constraints such as p95 latency under 250ms, 99.9% uptime, and PCI compliance boundaries.</p>
+        <p>Product and engineering convert business objectives into testable specifications. Functional requirements describe observable system behavior ("export filtered ledger rows to CSV within 5 seconds for up to 50,000 rows"). Non-functional requirements specify operational boundaries: availability (99.9% monthly uptime allows 43.8 minutes of downtime), p95 latency under 250ms, GDPR deletion within 30 days, and WCAG 2.1 AA accessibility.</p>
+        <p>Common pitfall: writing vague adjectives like "fast", "scalable", or "user-friendly" without numbers that QA can test.</p>
 
         <h2>3. System design</h2>
-        <p>Engineers choose data stores, service boundaries, authentication flows, and failure handling. Writing a short Architecture Design Document (ADD) before coding surfaces expensive mistakes such as missing database indexes, unversioned API payloads, or single points of failure. Grab a starter in our <a href="../templates/">Template Builder</a>.</p>
+        <p>Tech leads translate requirements into concrete components: database schemas, indexing strategies, caching tiers, message queues, authentication flows, and external API contracts. Teams document major trade-offs in short Architecture Decision Records (ADRs) committed inside the repository so future engineers understand why PostgreSQL was chosen over a document store or why a monolith beat microservices.</p>
+        <p>Common pitfall: designing only the happy path and ignoring timeouts, duplicate webhooks, partial failures, and rate limits. Start from our <a href="../templates/">Architecture Design Doc and ADR templates</a>.</p>
 
         <h2>4. Implementation</h2>
-        <p>Developers write code against small, reviewable pull requests. Modern teams pair implementation with continuous integration: every push runs linters, type checks, static security scans, and unit tests automatically.</p>
+        <p>Developers break design components into small, reviewable pull requests (ideally under 300 lines of diff). Every commit triggers automated Continuous Integration: formatting, linting, strict type checks, unit tests, secret scanning, and static security analysis. Keeping branches short-lived (trunk-based development) avoids painful merge conflicts.</p>
+        <p>Common pitfall: letting pull requests sit unreviewed for days or batching unrelated refactors with feature changes.</p>
 
         <h2>5. Testing</h2>
-        <p>QA and developers verify the build across multiple layers: unit tests for logic, integration tests for database and API contracts, end-to-end tests for critical user flows, and load tests for peak traffic. In regulated industries, users also complete formal User Acceptance Testing (UAT) in staging.</p>
+        <p>Testing verifies that the software meets specifications (verification) and solves the user problem (validation). Teams layer tests using the testing pyramid: thousands of fast unit tests (milliseconds), targeted integration tests against real database containers (seconds), and a focused suite of end-to-end tests covering revenue-critical user paths. Before major launches, teams also run load tests at 2x expected peak traffic and verify role-based access control.</p>
+        <p>Common pitfall: treating QA as a manual bottleneck at the end of a release instead of automating regression checks in CI.</p>
 
         <h2>6. Deployment</h2>
-        <p>Code moves to production through automated pipelines. Teams reduce blast radius using blue-green deployments, canary rollouts (sending 5% of traffic to the new version first), and backward-compatible database migrations so rollbacks stay safe.</p>
+        <p>Deployment promotes an immutable, tested build artifact from staging to production. For zero-downtime releases, teams use expand-and-contract database migrations: first add new nullable columns and deploy code that writes to both old and new fields; backfill historical rows; switch reads; and drop the old column in a later release. Traffic shifts via canary rollouts (5% -> 25% -> 100%) or blue-green switches so rollbacks take seconds instead of hours.</p>
+        <p>Common pitfall: running destructive schema drops inside the same deploy as application code, making rollback impossible.</p>
 
-        <h2>7. Maintenance</h2>
-        <p>Most software spends 70% or more of its life in maintenance. Maintenance falls into four categories: corrective (fixing bugs), adaptive (updating for new OS or API versions), perfective (improving speed or usability), and preventive (refactoring and dependency upgrades).</p>
+        <h2>7. Maintenance and operations</h2>
+        <p>Most production software spends 70% to 80% of its total cost of ownership in maintenance. ISO/IEC 14764 groups maintenance into four types: corrective (fixing production bugs), adaptive (keeping up with OS, browser, or third-party API changes), perfective (improving latency, cost efficiency, or UX), and preventive (refactoring, dependency upgrades, and retiring dead code). When incidents occur, teams run blameless post-mortems that turn outage timelines into concrete engineering safeguards.</p>
 
-        <div class="btn-row">
-          <a class="btn btn--primary" href="../checklist/">Track these 7 phases in the checklist tool</a>
-          <a class="btn" href="../diagram/">Generate a phase diagram</a>
+        <h2>Measuring SDLC health with DORA metrics</h2>
+        <p>Rather than measuring lines of code or raw story points, high-performing engineering teams track the four DORA (DevOps Research and Assessment) metrics to balance delivery speed against production stability:</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>DORA metric</th><th>What it measures</th><th>High-performing benchmark</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Deployment frequency</td><td>How often code ships to production.</td><td>On demand (daily or multiple times per day)</td></tr>
+              <tr><td>Lead time for changes</td><td>Time from commit to running in production.</td><td>Less than one day</td></tr>
+              <tr><td>Change failure rate</td><td>Percentage of deployments causing incidents or rollbacks.</td><td>Under 5% to 15%</td></tr>
+              <tr><td>Failed deployment recovery time (MTTR)</td><td>Time to restore service after a bad deploy.</td><td>Less than one hour</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="btn-row" style="margin-top: var(--space-lg);">
+          <a class="btn btn--primary" href="../checklist/">Track all 7 phases in the checklist tool</a>
+          <a class="btn" href="../diagram/">Generate a 7-phase diagram</a>
         </div>
       </div>
     </section>

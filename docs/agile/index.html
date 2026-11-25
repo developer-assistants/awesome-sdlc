@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
-  <title>Agile SDLC Explained: SDLC vs Agile Comparison for Developers</title>
-  <meta name="description" content="Understand how Agile fits inside the Software Development Life Cycle, how sprints execute all seven SDLC phases, and how Agile compares to Waterfall.">
+  <title>Agile SDLC Explained: SDLC vs Agile, Scrum, Kanban & DoD</title>
+  <meta name="description" content="Complete guide to Agile SDLC: how Agile implements all seven SDLC phases inside sprints, Scrum vs Kanban, Definition of Ready vs Done, metrics, and common anti-patterns.">
   <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/agile/">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Agile SDLC Explained: SDLC vs Agile Comparison for Developers">
-  <meta property="og:description" content="Understand how Agile fits inside the Software Development Life Cycle, how sprints execute all seven SDLC phases, and how Agile compares to Waterfall.">
+  <meta property="og:title" content="Agile SDLC Explained: SDLC vs Agile, Scrum, Kanban & DoD">
+  <meta property="og:description" content="Complete guide to Agile SDLC: how Agile implements all seven SDLC phases inside sprints, Scrum vs Kanban, Definition of Ready vs Done, metrics, and common anti-patterns.">
   <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/agile/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Agile SDLC Explained: SDLC vs Agile Comparison for Developers">
-  <meta name="twitter:description" content="Understand how Agile fits inside the Software Development Life Cycle, how sprints execute all seven SDLC phases, and how Agile compares to Waterfall.">
+  <meta name="twitter:title" content="Agile SDLC Explained: SDLC vs Agile, Scrum, Kanban & DoD">
+  <meta name="twitter:description" content="Complete guide to Agile SDLC: how Agile implements all seven SDLC phases inside sprints, Scrum vs Kanban, Definition of Ready vs Done, metrics, and common anti-patterns.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"Agile SDLC Explained: SDLC vs Agile Comparison for Developers","headline":"Agile SDLC Explained: SDLC vs Agile Comparison for Developers","description":"Understand how Agile fits inside the Software Development Life Cycle, how sprints execute all seven SDLC phases, and how Agile compares to Waterfall.","url":"https://developer-assistants.github.io/awesome-sdlc/agile/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"Agile SDLC Explained: SDLC vs Agile, Scrum, Kanban & DoD","headline":"Agile SDLC Explained: SDLC vs Agile, Scrum, Kanban & DoD","description":"Complete guide to Agile SDLC: how Agile implements all seven SDLC phases inside sprints, Scrum vs Kanban, Definition of Ready vs Done, metrics, and common anti-patterns.","url":"https://developer-assistants.github.io/awesome-sdlc/agile/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -46,15 +46,14 @@
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../">Home</a> / <span>Agile SDLC</span></nav>
         <h1>Agile SDLC and SDLC vs Agile</h1>
-        <p class="lead">Agile does not replace the Software Development Life Cycle. It runs the SDLC phases in short, repeating loops so teams ship working code early.</p>
+        <p class="lead">Agile does not replace the Software Development Life Cycle. It compresses planning, design, coding, testing, and release into repeating one- to three-week loops.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container prose">
         <h2>How SDLC and Agile relate</h2>
-        <p>A common interview misconception treats SDLC and Agile as competing options. SDLC is the overarching concept covering planning, requirements, design, coding, testing, deployment, and maintenance. Agile is one way to organize those phases.</p>
-        <p>In a traditional sequential lifecycle, a team finishes all requirements and design before writing a single line of production code. In Agile SDLC, the team scopes a thin slice of work, designs it, builds it, tests it, and ships it inside a one- to three-week sprint, then repeats using feedback from real users.</p>
+        <p>A frequent interview misconception treats SDLC and Agile as opposites. SDLC is the universal set of activities required to build and operate software. Agile is an iterative methodology for scheduling those activities so teams validate assumptions with real users early instead of waiting until the end of a six-month build.</p>
 
         <h2>SDLC vs Agile comparison table</h2>
         <div class="table-wrap">
@@ -64,22 +63,46 @@
             </thead>
             <tbody>
               <tr><td>Requirements</td><td>Frozen up front in a detailed SRS.</td><td>Maintained in a prioritized backlog that evolves.</td></tr>
-              <tr><td>Design</td><td>Completed once before coding starts.</td><td>Emergent architecture refined each sprint.</td></tr>
+              <tr><td>Design</td><td>Completed once before coding starts.</td><td>Emergent architecture refined each sprint with ADRs.</td></tr>
               <tr><td>Testing</td><td>Dedicated QA phase after code freeze.</td><td>Automated tests written alongside every story.</td></tr>
-              <tr><td>Releases</td><td>Infrequent large launches.</td><td>Small, frequent increments.</td></tr>
-              <tr><td>Customer feedback</td><td>Collected at UAT or after launch.</td><td>Reviewed at every sprint demo.</td></tr>
+              <tr><td>Releases</td><td>Infrequent large launches.</td><td>Small, frequent increments behind feature flags.</td></tr>
+              <tr><td>Customer feedback</td><td>Collected at UAT or after launch.</td><td>Reviewed at every sprint demo and telemetry check.</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h2>Scrum vs Kanban inside Agile SDLC</h2>
-        <p>Scrum uses fixed-length sprints (commonly two weeks), sprint planning, daily standups, demos, and retrospectives. It fits product teams building new features on a predictable cadence.</p>
-        <p>Kanban removes fixed sprints in favor of continuous flow with strict work-in-progress (WIP) limits. It fits platform teams, SRE groups, and support engineering where priorities shift daily.</p>
+        <h2>Scrum vs Kanban vs Extreme Programming (XP)</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Framework</th><th>Cadence</th><th>Core mechanism</th><th>Best fit</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Scrum</td><td>Fixed 1 to 3 week sprints</td><td>Sprint backlog, demos, retrospectives</td><td>Product teams building planned roadmaps</td></tr>
+              <tr><td>Kanban</td><td>Continuous flow</td><td>Strict Work-in-Progress (WIP) limits</td><td>Platform, SRE, and support engineering</td></tr>
+              <tr><td>XP</td><td>Weekly cycles</td><td>TDD, pair programming, continuous integration</td><td>High-reliability codebases with fast change</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-        <h2>When Agile struggles</h2>
-        <p>Agile fails when teams skip design and automated testing under the excuse of moving fast. Without CI pipelines, code reviews, and clear acceptance criteria, short sprints accumulate technical debt quickly.</p>
+        <h2>Definition of Ready (DoR) vs Definition of Done (DoD)</h2>
+        <p>Two lightweight checklists keep Agile sprints from stalling. Definition of Ready verifies that a story is clear enough to start: user problem stated, acceptance criteria testable, dependencies identified, and mocks attached if UI changes. Definition of Done verifies that a story is ready to ship: code reviewed, unit and integration tests passing in CI, security checks clean, documentation updated, and verified in staging.</p>
 
-        <p>Compare Agile against <a href="../waterfall/">Waterfall SDLC</a> or test your project constraints in the <a href="../models/">SDLC Model Selector</a>.</p>
+        <h2>Useful Agile engineering metrics</h2>
+        <ul>
+          <li>Cycle time: elapsed time from starting a ticket to deploying it to production. Lower cycle time exposes bottlenecks faster than story-point velocity.</li>
+          <li>Escaped defects: bugs found in production instead of during sprint testing.</li>
+          <li>Work-in-progress (WIP): number of open tasks per engineer. High WIP signals context switching and stalled code reviews.</li>
+          <li>Sprint predictability: ratio of completed commitments to planned sprint scope over a rolling 3-sprint window.</li>
+        </ul>
+
+        <h2>Common Agile anti-patterns</h2>
+        <p>Teams lose the benefits of Agile when they run "mini-Waterfalls" inside sprints (coding for 8 days and dumping everything on QA on day 9), use story points to compare individual developers, or skip architecture design under the excuse of moving fast. Keeping stories small and automating tests inside CI solves most of these traps.</p>
+
+        <div class="btn-row">
+          <a class="btn btn--primary" href="../waterfall/">Compare with Waterfall SDLC</a>
+          <a class="btn" href="../models/">Open SDLC model selector</a>
+        </div>
       </div>
     </section>
   </main>

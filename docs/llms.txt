@@ -7,16 +7,16 @@
 
 ## Guides
 - [SDLC Guide](https://developer-assistants.github.io/awesome-sdlc/): Overview, interactive checklist preview, and model comparison.
-- [SDLC Meaning](https://developer-assistants.github.io/awesome-sdlc/meaning/): Plain definition, roles, and SDLC vs STLC vs PDLC.
-- [SDLC Phases](https://developer-assistants.github.io/awesome-sdlc/phases/): All seven phases with artifacts, exit gates, and examples.
-- [SDLC Models](https://developer-assistants.github.io/awesome-sdlc/models/): Waterfall, Agile, V-Model, Spiral, Iterative, plus interactive Model Selector.
-- [SDLC Examples](https://developer-assistants.github.io/awesome-sdlc/examples/): Real-world SaaS, REST API, and regulated firmware walkthroughs.
-- [Agile SDLC](https://developer-assistants.github.io/awesome-sdlc/agile/): SDLC vs Agile comparison, Scrum vs Kanban.
-- [Waterfall SDLC](https://developer-assistants.github.io/awesome-sdlc/waterfall/): Sequential stage gates, strengths, and trade-offs.
-- [SDLC Cheat Sheet](https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/): Printable one-page reference.
+- [SDLC Meaning](https://developer-assistants.github.io/awesome-sdlc/meaning/): Definition, history, defect cost curve, roles, SSDLC, and SDLC vs STLC vs PDLC.
+- [SDLC Phases](https://developer-assistants.github.io/awesome-sdlc/phases/): All seven phases with deliverables, SSDLC gates, pitfalls, and DORA metrics.
+- [SDLC Models](https://developer-assistants.github.io/awesome-sdlc/models/): Waterfall, Agile, V-Model, Spiral, Iterative, RAD, DevOps, plus interactive Model Selector.
+- [SDLC Examples](https://developer-assistants.github.io/awesome-sdlc/examples/): Real-world SaaS, REST API, medical firmware, and offline mobile app walkthroughs.
+- [Agile SDLC](https://developer-assistants.github.io/awesome-sdlc/agile/): SDLC vs Agile, Scrum vs Kanban vs XP, DoR/DoD, metrics, and anti-patterns.
+- [Waterfall SDLC](https://developer-assistants.github.io/awesome-sdlc/waterfall/): Stage gates, CCB, strengths, failure modes, and Water-Scrum-Fall hybrid.
+- [SDLC Cheat Sheet](https://developer-assistants.github.io/awesome-sdlc/cheat-sheet/): Printable reference with DORA benchmarks and RACI matrix.
 
 ## Interactive Tools
-- [SDLC Checklist Generator](https://developer-assistants.github.io/awesome-sdlc/checklist/): Track 7-phase progress and export Markdown.
-- [SDLC Diagram Generator](https://developer-assistants.github.io/awesome-sdlc/diagram/): Generate and download SVG, PNG, and Mermaid diagrams.
-- [SDLC Template Builder](https://developer-assistants.github.io/awesome-sdlc/templates/): Customize and download PRD, SRS, Design Doc, Test Plan, Runbook, and Post-Mortem templates.
-- [SDLC Interview Questions & Quiz](https://developer-assistants.github.io/awesome-sdlc/interview-questions/): 8-question interactive quiz and Q&A bank.
+- [SDLC Checklist Generator](https://developer-assistants.github.io/awesome-sdlc/checklist/): Track 7-phase progress across 5 presets and export Markdown.
+- [SDLC Diagram Generator](https://developer-assistants.github.io/awesome-sdlc/diagram/): Generate and download SVG, PNG, and Mermaid diagrams across 6 models.
+- [SDLC Template Builder](https://developer-assistants.github.io/awesome-sdlc/templates/): Customize and download 8 engineering Markdown templates (PRD, SRS, ADD, ADR, Security, Test Plan, Runbook, Post-Mortem).
+- [SDLC Interview Questions & Quiz](https://developer-assistants.github.io/awesome-sdlc/interview-questions/): 15-question interactive quiz and 16-item Q&A bank.

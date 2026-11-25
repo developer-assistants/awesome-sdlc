@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="HqgfQrEQATXaycciOAu8GzuJP8BSRHtaR1JrgBtnApU" />
   <title>SDLC Checklist Generator: Interactive 7-Phase Project Checklist</title>
-  <meta name="description" content="Free interactive SDLC Checklist Generator for SaaS web apps, REST APIs, mobile apps, and enterprise systems. Track progress and export Markdown.">
+  <meta name="description" content="Free interactive SDLC Checklist Generator for SaaS web apps, REST APIs, mobile apps, enterprise systems, and Data/ML pipelines. Track progress and export Markdown.">
   <link rel="canonical" href="https://developer-assistants.github.io/awesome-sdlc/checklist/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="SDLC Checklist Generator: Interactive 7-Phase Project Checklist">
-  <meta property="og:description" content="Free interactive SDLC Checklist Generator for SaaS web apps, REST APIs, mobile apps, and enterprise systems. Track progress and export Markdown.">
+  <meta property="og:description" content="Free interactive SDLC Checklist Generator for SaaS web apps, REST APIs, mobile apps, enterprise systems, and Data/ML pipelines. Track progress and export Markdown.">
   <meta property="og:url" content="https://developer-assistants.github.io/awesome-sdlc/checklist/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="SDLC Checklist Generator: Interactive 7-Phase Project Checklist">
-  <meta name="twitter:description" content="Free interactive SDLC Checklist Generator for SaaS web apps, REST APIs, mobile apps, and enterprise systems. Track progress and export Markdown.">
+  <meta name="twitter:description" content="Free interactive SDLC Checklist Generator for SaaS web apps, REST APIs, mobile apps, enterprise systems, and Data/ML pipelines. Track progress and export Markdown.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@600&family=Red+Hat+Text:wght@400;500&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Checklist Generator: Interactive 7-Phase Project Checklist","headline":"SDLC Checklist Generator: Interactive 7-Phase Project Checklist","description":"Free interactive SDLC Checklist Generator for SaaS web apps, REST APIs, mobile apps, and enterprise systems. Track progress and export Markdown.","url":"https://developer-assistants.github.io/awesome-sdlc/checklist/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"SDLC Checklist Generator: Interactive 7-Phase Project Checklist","headline":"SDLC Checklist Generator: Interactive 7-Phase Project Checklist","description":"Free interactive SDLC Checklist Generator for SaaS web apps, REST APIs, mobile apps, enterprise systems, and Data/ML pipelines. Track progress and export Markdown.","url":"https://developer-assistants.github.io/awesome-sdlc/checklist/","isAccessibleForFree":true,"license":"https://opensource.org/licenses/MIT","publisher":{"@type":"Organization","name":"Developer Assistants","url":"https://github.com/developer-assistants"}}</script>
 </head>
 <body>
   <header class="site-header">
@@ -70,6 +70,7 @@
                   <option value="api">Backend API / Microservice</option>
                   <option value="mobile">Mobile App (iOS / Android)</option>
                   <option value="enterprise">Regulated Enterprise System</option>
+                  <option value="data">Data / ML Pipeline</option>
                 </select>
               </div>
               <form class="field" data-add-item-form>
@@ -102,6 +103,21 @@
             <span class="status-note" data-checklist-status aria-live="polite"></span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container prose">
+        <h2>Using SDLC checklists in GitHub pull requests</h2>
+        <p>Checklists work best when they sit where engineers already work. Save a short release checklist at <code>.github/pull_request_template.md</code> so every pull request reminds authors about tests, migrations, and rollback safety without blocking small fixes:</p>
+        <pre class="code-block">## Summary
+- What changed and why:
+
+## Verification
+- [ ] Unit and integration tests added or updated
+- [ ] Database migrations are backward-compatible
+- [ ] Auth, permissions, and input validation checked
+- [ ] Feature flag or rollback steps noted for production</pre>
       </div>
     </section>
   </main>

@@ -25,17 +25,19 @@ A free, open-source collection of SDLC guides, Markdown templates, vector diagra
 
 All five tools execute locally in the browser with vanilla JavaScript:
 
-1. [SDLC Checklist Generator](https://developer-assistants.github.io/awesome-sdlc/checklist/): Choose from SaaS, REST API, Mobile, or Enterprise presets, add custom items, track completion percentage, and copy or download Markdown.
+1. [SDLC Checklist Generator](https://developer-assistants.github.io/awesome-sdlc/checklist/): Choose from SaaS, REST API, Mobile, Enterprise, or Data/ML Pipeline presets, add custom items, track completion percentage, and copy or download Markdown.
 2. [SDLC Model Selector](https://developer-assistants.github.io/awesome-sdlc/models/): Score five project parameters (requirements stability, release cadence, compliance, risk, and team size) to rank fitting delivery models.
-3. [SDLC Diagram Generator](https://developer-assistants.github.io/awesome-sdlc/diagram/): Customize phase labels for Cycle, Waterfall, Agile, V-Model, or Spiral views and export SVG, PNG, or Mermaid syntax.
-4. [Template Builder](https://developer-assistants.github.io/awesome-sdlc/templates/): Fill project metadata and download customized PRD, SRS, Architecture Design Doc, Test Plan, Deployment Runbook, or Incident Post-Mortem Markdown files.
-5. [SDLC Quiz](https://developer-assistants.github.io/awesome-sdlc/interview-questions/): Eight scenario questions with immediate explanations and score tracking.
+3. [SDLC Diagram Generator](https://developer-assistants.github.io/awesome-sdlc/diagram/): Customize phase labels for Cycle, Waterfall, Agile, V-Model, Spiral, or DevOps Loop views and export SVG, PNG, or Mermaid syntax.
+4. [Template Builder](https://developer-assistants.github.io/awesome-sdlc/templates/): Fill project metadata and download customized PRD, SRS, Architecture Design Doc, ADR, SSDLC Security Review, Test Plan, Deployment Runbook, or Incident Post-Mortem Markdown files.
+5. [SDLC Quiz](https://developer-assistants.github.io/awesome-sdlc/interview-questions/): Fifteen scenario questions with immediate explanations, score tracking, and a 16-question interview Q&A bank.
 
 ## Markdown templates in this repository
 
 - [templates/prd-template.md](templates/prd-template.md)
 - [templates/srs-template.md](templates/srs-template.md)
 - [templates/architecture-design-doc.md](templates/architecture-design-doc.md)
+- [templates/adr-template.md](templates/adr-template.md)
+- [templates/security-review-checklist.md](templates/security-review-checklist.md)
 - [templates/test-plan.md](templates/test-plan.md)
 - [templates/release-runbook.md](templates/release-runbook.md)
 - [templates/post-mortem.md](templates/post-mortem.md)
